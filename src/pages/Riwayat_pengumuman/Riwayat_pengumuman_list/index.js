@@ -13,6 +13,7 @@ const Riwayat_pengumuman_list = ({navigation}) => {
     )
 }
 
+// export default Riwayat_pengumuman_list
 export default Riwayat_pengumuman_list
 
 const styles = StyleSheet.create({
