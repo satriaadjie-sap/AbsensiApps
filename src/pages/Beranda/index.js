@@ -18,13 +18,13 @@ const Beranda = ({hasAbsen=false, navigation}) => {
                         Diharapkan semua mahasiswa Polman Astra dapat mengisi dengan benar data kesehatan harian dan absensi ini dan menjadi bagian dari absen harian seperti saat perkuliahan dalam keadaaan normal.
                     </Text>
                     <InformasiPengisian/> 
-                    {/* NOTIFIKASI PENGISIAN AKAN AKTIF JIKA SUDAH MENGISI FORMULIR*/}                    
+                    {/* NOTIFIKASI PENGISIAN AKAN AKTIF JIKA SUDAH MENGISI FORMULIR*/}
                     {/* BUTTON ISI FORMULIR AKAN AKTTIF JIKA BELUM MENGISI FORMULIR */}
                     {hasAbsen == true ? <NotifPengisian/>  : <ButtonIsiFormulir navigation = {navigation}/>}
                     <TouchableOpacity 
                         style={{alignItems:'center', backgroundColor:WARNA_MERAH}} 
                         onPress={() => navigation.replace("Login")}>
-                        <Text style={{color:WARNA_PUTIH}}>Logout</Text>                
+                        <Text style={{color:WARNA_PUTIH}}>Logout</Text>
                     </TouchableOpacity>
                     <Text style={styles.textKesulitan}>
                         Jika terdapat kesulitan tentang cara penggunaan aplikasi ini, silahkan menghubungi MIS / Bang Candra.

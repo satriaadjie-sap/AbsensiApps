@@ -1,16 +1,22 @@
 import React from 'react'
-import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Alert, StyleSheet, Text, TouchableOpacity, View, Button } from 'react-native'
+import { NavigationContainer } from '@react-navigation/native'
 import { IconLogoPolman } from '../../assets/icons'
 import { WARNA_PUTIH, WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 
-const HeaderApps = () => {
+const HeaderApps = ({navigation}) => {
     return (
         <View style={styles.container}>
             <IconLogoPolman/>
+            <Button
+                title="Go to Details"
+                onPress={() => navigation.navigate('Login')}
+            />
             <TouchableOpacity 
                 style={styles.touchable}
-                onPress={() => Alert.alert('lgout')}    
-            >
+                onPress={() => navigation.replace("Login")}
+                //  onPress={() => Alert.alert('lgout')}
+                >
                 <Text style={styles.text}>
                     Logout
                 </Text>
