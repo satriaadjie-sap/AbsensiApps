@@ -19,7 +19,7 @@ const MainApp = () => {
             <Tab.Screen name="Form Absensi" component={Form_absensi} />
             <Tab.Screen name="Pengumuman" component={Riwayat_pengumuman} />
             <Tab.Screen name="Ubah Sandi" component={Ubah_sandi} />
-            {/* <Tab.Screen name="Testing" component={Testing} /> */}
+            {/* <Tab.Screen name="LogOut" component={Logout} /> */}
             {/* <Tab.Screen name="Login" component={Login} /> */}
         </Tab.Navigator>        
     )

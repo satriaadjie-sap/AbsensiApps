@@ -38,8 +38,8 @@ const Form_absensi = () => {
                 <Form_absensi_1/>
                 <Form_absensi_2/>
                 <Form_absensi_3/>
-                {/* <Form_absensi_4/> */}
-                {/* <Form_absensi_5/> */}
+                <Form_absensi_4/>
+                <Form_absensi_5/>
             </ScrollView>
         </View>
     )
