@@ -8,13 +8,10 @@ const HeaderApps = ({navigation}) => {
     return (
         <View style={styles.container}>
             <IconLogoPolman/>
-            <Button
-                title="Go to Details"
-                onPress={() => navigation.navigate('Login')}
-            />
             <TouchableOpacity 
                 style={styles.touchable}
-                onPress={() => navigation.replace("Login")}
+                onPress={() => navigation.navigate('Login')}
+                // onPress={() => navigation.replace("Login")}
                 //  onPress={() => Alert.alert('lgout')}
                 >
                 <Text style={styles.text}>

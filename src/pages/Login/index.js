@@ -105,7 +105,7 @@ const Login = ({navigation}) => {
                                 style={styles.touch}>
                                 <Text style={styles.text}
                                     onPress={() => navigation.replace("MainApp")}
-                                    //onPress={handleSubmitPress}
+                                    // onPress={handleSubmitPress}
                                 >
                                     LOGIN
                                 </Text>

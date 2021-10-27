@@ -12,3 +12,7 @@ export const WARNA_MERAH = "#860000";
 export const WARNA_UNGU_MUDA = "#BA49FF";
 export const WARNA_KUNING = "#FFDCA8";
 export const WARNA_KUNING_TUA = "#BF8B3C";
+
+export const LINK_API =
+    'http://10.0.2.2/PoliteknikManufakturAstra_API/efcc359990d14328fda74beb65088ef9660ca17e/';
+export const LINK_API_JSON_DB = 'http://10.0.2.2:3000/';
