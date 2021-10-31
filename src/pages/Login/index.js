@@ -1,8 +1,11 @@
-import React, {useState, createRef} from 'react'
+import axios, { Axios } from 'axios'
+import { AsyncStorage } from 'react-native'
+import React, {useState, createRef, useEffect} from 'react'
 import { StyleSheet,Keyboard, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { IconLogin, IconLogoPolman } from '../../assets/icons'
 import {ButtonLogin} from '../../components'
 import { WARNA_PUTIH, WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
+import { ForceTouchGestureHandler } from 'react-native-gesture-handler'
 
 
 const Login = ({navigation}) => {    
@@ -16,53 +19,32 @@ const Login = ({navigation}) => {
     const handleSubmitPress = () => {
         setErrortext('');
         if (!userNIM) {
-        alert('Masukkan NIM dengan benar');
+            alert('NIM/NPK masih kosong');
         return;
         }
         if (!userPassword) {
-        alert('Masukkan Password dengan benar');
+            alert('Password masih kosong');
         return;
         }
         setLoading(true);
-        let dataToSend = {nim: userNIM, password: userPassword};
-        //let dataToSend = {idEmployee: userNIM, namaEmployee: userPassword};
-        let formBody = [];
-        for (let key in dataToSend) {
-        let encodedKey = encodeURIComponent(key);
-        let encodedValue = encodeURIComponent(dataToSend[key]);
-        formBody.push(encodedKey + '=' + encodedValue);
-        }
-        formBody = formBody.join('&');
-
-        fetch('http://10.0.2.2:8080/login', {
-        method: 'POST',
-        body: formBody,
-        headers: {
-            //Header Defination
-            'Content-Type':
-            'application/x-www-form-urlencoded;charset=UTF-8',
-        },
-        })
-        .then((response) => response.json())
-        .then((responseJson) => {
-            //Hide Loader
-            setLoading(false);
-            console.log(responseJson);
-            // If server response message same as Data Matched
-            if (responseJson.status === 'success') {
-            AsyncStorage.setItem('user_nim', responseJson.nim);
-            console.log(responseJson);
-            navigation.replace('MainApp');
-            } else {
-            setErrortext(responseJson.msg);
-            console.log('Please check your email id or password');
-            }
-        })
-        .catch((error) => {
-            //Hide Loader
-            setLoading(false);
-            console.error(error);
-        });
+    
+        // try{
+            axios.get(`http://10.0.2.2/PoliteknikManufakturAstra_API/efcc359990d14328fda74beb65088ef9660ca17e/Login/CobaLogin?username=${userNIM}`)
+            // axios.get(`${LINK_API}Login/CobaLogin?username=${username}`)
+            .then(res => {
+                if(res.data.result === "TRUE") {
+                    navigation.replace('MainApp');
+                }
+                else
+                {
+                    // alert('Nama Pengguna atau Kata Sandi salah!');
+                }
+            })
+        // }
+        // catch(error){
+        //     // alert('Nama Pengguna atau Kata Sandi salah!');
+        //     console.log(error)
+        // }
     };
     return (
         <View style={ styles.page }>            
@@ -104,8 +86,8 @@ const Login = ({navigation}) => {
                             <TouchableOpacity
                                 style={styles.touch}>
                                 <Text style={styles.text}
-                                    onPress={() => navigation.replace("MainApp")}
-                                    // onPress={handleSubmitPress}
+                                    // onPress={() => navigation.replace("MainApp")}
+                                    onPress={handleSubmitPress}
                                 >
                                     LOGIN
                                 </Text>

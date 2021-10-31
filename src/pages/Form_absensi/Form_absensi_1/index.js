@@ -10,20 +10,22 @@ import { WARNA_SEKUNDER } from '../../../utils/constants'
 const Form_absensi_1 = () => {
     return (
         <View>
-            <View style={styles.containerForm}>            
-                <HeaderFormAbsesni text={"Langkah 1 / 5 : Mengisi Data Diri dan Keluarga"}/>
-                <InformasiDataDiri/>
-                <FormPengisian_1_1/>
-                <FormPengisian_1_2/>
-                <FormPengisian_1_3/>
-                <FormPengisian_1_4/>
-                <FormPengisian_1_5/>
-                <FormPengisian_1_6/>
-            </View>
-            <View style={styles.button}>
-                <ButtonBatal1/>
-                <ButtonSelanjutnya1/>
-            </View>
+            <ScrollView style={styles.containerScrollView}>
+                <View style={styles.containerForm}>            
+                    <HeaderFormAbsesni text={"Langkah 1 / 5 : Mengisi Data Diri dan Keluarga"}/>
+                    <InformasiDataDiri/>
+                    <FormPengisian_1_1/>
+                    <FormPengisian_1_2/>
+                    <FormPengisian_1_3/>
+                    <FormPengisian_1_4/>
+                    <FormPengisian_1_5/>
+                    <FormPengisian_1_6/>
+                </View>
+                <View style={styles.button}>
+                    <ButtonBatal1/>
+                    <ButtonSelanjutnya1/>
+                </View>
+            </ScrollView>
         </View>
         
     )
@@ -42,5 +44,8 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         justifyContent:'flex-end',
         marginVertical:5
-    }  
+    },
+    containerScrollView:{
+        paddingHorizontal:13
+    }
 })
