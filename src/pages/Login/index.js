@@ -4,7 +4,7 @@ import React, {useState, createRef, useEffect} from 'react'
 import { StyleSheet,Keyboard, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { IconLogin, IconLogoPolman } from '../../assets/icons'
 import {ButtonLogin} from '../../components'
-import { WARNA_PUTIH, WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
+import { WARNA_PUTIH, WARNA_SEKUNDER, WARNA_UTAMA, LINK_API } from '../../utils/constants'
 import { ForceTouchGestureHandler } from 'react-native-gesture-handler'
 
 
@@ -28,23 +28,19 @@ const Login = ({navigation}) => {
         }
         setLoading(true);
     
-        // try{
-            axios.get(`http://10.0.2.2/PoliteknikManufakturAstra_API/efcc359990d14328fda74beb65088ef9660ca17e/Login/CobaLogin?username=${userNIM}`)
-            // axios.get(`${LINK_API}Login/CobaLogin?username=${username}`)
-            .then(res => {
-                if(res.data.result === "TRUE") {
-                    navigation.replace('MainApp');
-                }
-                else
-                {
-                    // alert('Nama Pengguna atau Kata Sandi salah!');
-                }
-            })
-        // }
-        // catch(error){
-        //     // alert('Nama Pengguna atau Kata Sandi salah!');
-        //     console.log(error)
-        // }
+        // axios.get(`http://10.0.2.2/PoliteknikManufakturAstra_API/efcc359990d14328fda74beb65088ef9660ca17e/Login/CobaLogin?username=${userNIM}`)
+        axios.get(`${LINK_API}Login/CobaLogin?username=${userNIM}`)
+        .then(res => {
+            if(res.data.result === "TRUE") {
+                navigation.replace('MainApp');
+            }
+            else
+            {
+                alert('Nama Pengguna atau Kata Sandi salah!');
+            }
+        })
+        .catch(error => alert('Nama Pengguna atau Kata Sandi salah!', error))
+        .finally(() => setLoading(false));
     };
     return (
         <View style={ styles.page }>            
