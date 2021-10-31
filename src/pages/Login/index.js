@@ -4,12 +4,12 @@ import React, {useState, createRef, useEffect} from 'react'
 import { StyleSheet,Keyboard, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { IconLogin, IconLogoPolman } from '../../assets/icons'
 import {ButtonLogin} from '../../components'
-import { WARNA_PUTIH, WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
+import { WARNA_PUTIH, WARNA_SEKUNDER, WARNA_UTAMA, LINK_API } from '../../utils/constants'
 import { ForceTouchGestureHandler } from 'react-native-gesture-handler'
 
 
 const Login = ({navigation}) => {    
-    const [userNIM, setUserNIM] = useState('')
+    const [username, setUsername] = useState('')
     const [userPassword, setUserPassword] = useState('');
     const [loading, setLoading] = useState(false);
     const [errortext, setErrortext] = useState('');
@@ -18,34 +18,34 @@ const Login = ({navigation}) => {
 
     const handleSubmitPress = () => {
         setErrortext('');
-        if (!userNIM) {
-            alert('NIM/NPK masih kosong');
+        if (!username) {
+            alert('Username wajib diisi');
         return;
         }
         if (!userPassword) {
-            alert('Password masih kosong');
+            alert('Password wajib diisi');
         return;
         }
+
         setLoading(true);
     
-        // try{
-            axios.get(`http://10.0.2.2/PoliteknikManufakturAstra_API/efcc359990d14328fda74beb65088ef9660ca17e/Login/CobaLogin?username=${userNIM}`)
-            // axios.get(`${LINK_API}Login/CobaLogin?username=${username}`)
+        axios
+            .get(`${LINK_API}Login/LoginUser?username=${username}`)
             .then(res => {
                 if(res.data.result === "TRUE") {
                     navigation.replace('MainApp');
                 }
                 else
                 {
-                    // alert('Nama Pengguna atau Kata Sandi salah!');
+                    alert('Username atau Kata Sandi salah!');
+                    return;
                 }
+                
             })
-        // }
-        // catch(error){
-        //     // alert('Nama Pengguna atau Kata Sandi salah!');
-        //     console.log(error)
-        // }
-    };
+            .catch(error => alert('Username atau Kata Sandi salah!', error))
+            .finally(() => setLoading(false));
+            };
+
     return (
         <View style={ styles.page }>            
             <View style={styles.container}>
@@ -57,8 +57,8 @@ const Login = ({navigation}) => {
                     <TextInput
                         placeholder="Nama Akun SIA"
                         style={styles.textInput}
-                        onChangeText={(userNIM) =>
-                            setUserNIM(userNIM)
+                        onChangeText={(username) =>
+                            setUsername(username)
                           }
                           keyboardType="number-pad"
                           returnKeyType="next"
