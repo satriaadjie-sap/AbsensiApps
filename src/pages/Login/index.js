@@ -6,11 +6,11 @@ import { IconLogin, IconLogoPolman } from '../../assets/icons'
 import {ButtonLogin} from '../../components'
 import { WARNA_PUTIH, WARNA_SEKUNDER, WARNA_UTAMA, LINK_API } from '../../utils/constants'
 import { ForceTouchGestureHandler } from 'react-native-gesture-handler'
-
+var SharedPreferences = require('react-native-shared-preferences');
 
 const Login = ({navigation}) => {    
     const [username, setUsername] = useState('')
-    const [userPassword, setUserPassword] = useState('');
+    const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
     const [errortext, setErrortext] = useState('');
 
@@ -19,30 +19,30 @@ const Login = ({navigation}) => {
     const handleSubmitPress = () => {
         setErrortext('');
         if (!username) {
-            alert('Username wajib diisi');
+            alert('Nama akun harus diisi!');
         return;
         }
-        if (!userPassword) {
-            alert('Password wajib diisi');
+        if (!password) {
+            alert('Kata sandi harus diisi!');
         return;
         }
 
         setLoading(true);
     
         axios
-            .get(`${LINK_API}Login/LoginUser?username=${username}`)
+            .get(`${LINK_API}Login/LoginUser?username=${username}&&password=${password}`)
             .then(res => {
                 if(res.data.result === "TRUE") {
                     navigation.replace('MainApp');
                 }
                 else
                 {
-                    alert('Username atau Kata Sandi salah!');
+                    alert('Username atau password salah!');
                     return;
                 }
                 
             })
-            .catch(error => alert('Username atau Kata Sandi salah!', error))
+            .catch(error => alert('Nama akun atau kata sandi salah!', error))
             .finally(() => setLoading(false));
             };
 
@@ -71,8 +71,8 @@ const Login = ({navigation}) => {
                     <TextInput
                         placeholder="Kata Sandi"
                         style={styles.textInput}
-                        onChangeText={(userPassword) =>
-                            setUserPassword(userPassword)
+                        onChangeText={(password) =>
+                            setPassword(password)
                           }
                         ref={passwordInputRef}
                         onSubmitEditing={Keyboard.dismiss}
