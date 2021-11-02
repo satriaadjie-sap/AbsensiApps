@@ -1,23 +1,42 @@
 import React from 'react'
+import { AsyncStorage } from 'react-native'
+import { useNavigation } from '@react-navigation/native';
 import { Alert, StyleSheet, Text, TouchableOpacity, View, Button } from 'react-native'
-import { NavigationContainer } from '@react-navigation/native'
 import { IconLogoPolman } from '../../assets/icons'
 import { WARNA_PUTIH, WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
+// import { ButtonIsiFormulir} from 'components'
 
-const HeaderApps = ({navigation}) => {
+// import { AsyncStorage } from '@react-navigation-async-storage/async-storage'
+
+const HeaderApps = ({}) => {
+
+    const navigation = useNavigation();
+
+    const handleSubmitPress = () => {
+        
+        // Menghapus data dari local storage
+        AsyncStorage.removeItem('user');
+        navigation.replace("Login")        
+    }
+
     return (
         <View style={styles.container}>
             <IconLogoPolman/>
+            {/* {<ButtonIsiFormulir navigation = {navigation}/>} */}
             <TouchableOpacity 
                 style={styles.touchable}
-                onPress={() => navigation.navigate('Login')}
-                // onPress={() => navigation.replace("Login")}
-                //  onPress={() => Alert.alert('lgout')}
+                onPress={handleSubmitPress}
                 >
                 <Text style={styles.text}>
                     Logout
                 </Text>
             </TouchableOpacity>
+            {/* {<ButtonIsiFormulir navigation = {navigation}/>} */}
+                        {/* <TouchableOpacity 
+                            style={{alignItems:'center', backgroundColor:WARNA_SEKUNDER}} 
+                            onPress={handleSubmitPress}>
+                            <Text style={{color:WARNA_PUTIH}}>Logout</Text>
+                        </TouchableOpacity> */}
         </View>
     )
 }

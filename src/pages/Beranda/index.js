@@ -1,20 +1,9 @@
 import React from 'react'
 import { SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { ButtonIsiFormulir, HeaderApps, HeaderInformation, InformasiPengisian, NotifPengisian } from '../../components'
-
-import { AsyncStorage } from 'react-native'
-
 import { WARNA_BG_FORM, WARNA_MERAH, WARNA_PUTIH, WARNA_SEKUNDER } from '../../utils/constants'
 
 const Beranda = ({hasAbsen=false, navigation}) => {
-
-    const handleSubmitPress = () => {
-        
-            // Mengahpus data dari local storage
-            AsyncStorage.removeItem('user');
-            navigation.replace("Login")
-        
-    }
 
     return (
         <View style={ styles.page }>            
@@ -31,11 +20,7 @@ const Beranda = ({hasAbsen=false, navigation}) => {
                     {/* NOTIFIKASI PENGISIAN AKAN AKTIF JIKA SUDAH MENGISI FORMULIR*/}
                     {/* BUTTON ISI FORMULIR AKAN AKTTIF JIKA BELUM MENGISI FORMULIR */}
                     {hasAbsen == true ? <NotifPengisian/>  : <ButtonIsiFormulir navigation = {navigation}/>}
-                    <TouchableOpacity 
-                        style={{alignItems:'center', backgroundColor:WARNA_MERAH}} 
-                        onPress={handleSubmitPress}>
-                        <Text style={{color:WARNA_PUTIH}}>Logout</Text>
-                    </TouchableOpacity>
+
                     <Text style={styles.textKesulitan}>
                         Jika terdapat kesulitan tentang cara penggunaan aplikasi ini, silahkan menghubungi MIS / Bang Candra.
                     </Text>
