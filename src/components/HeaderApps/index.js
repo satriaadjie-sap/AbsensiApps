@@ -20,6 +20,12 @@ const HeaderApps = ({navigation}) => {
                     Logout
                 </Text>
             </TouchableOpacity> */}
+            {/* {hasAbsen == true ? <NotifPengisian/>  : <ButtonIsiFormulir navigation = {navigation}/>}
+            <TouchableOpacity 
+                style={{alignItems:'center', backgroundColor:WARNA_MERAH}} 
+                onPress={handleSubmitPress}>
+                <Text style={{color:WARNA_PUTIH}}>Logout</Text>
+            </TouchableOpacity> */}
         </View>
     )
 }

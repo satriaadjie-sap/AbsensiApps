@@ -3,36 +3,27 @@ import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 // import { IconLogin } from '../../assets/icons'
 import { WARNA_PUTIH, WARNA_UTAMA } from '../../utils/constants'
 import {useNavigation} from '@react-navigation/native';
-import Parse from 'parse/react-native';
-import {StackActions} from '@react-navigation/native';
+// import AsyncStorage from '@react-native-async-storage/async-storage';
+import { AsyncStorage } from 'react-native'
+
+    const handleSubmitPress = () => {
+        // Mengahpus data dari local storage
+        AsyncStorage.removeItem('user');
+        navigation.replace("Login")    
+    }
 
 export const ButtonLogout = () => {
-    const navigation = useNavigation();
+    // const navigation = useNavigation();
 
-    const doUserLogout = async function(){
-        return await Parse.User.logOut()
-        .then(async () => {
-        // To verify that current user is now empty, currentAsync can be used
-                const currentUser = await Parse.User.currentAsync();
-                if (currentUser === null) {
-                Alert.alert('Success!', 'No user is logged in anymore!');
-                }
-                // Navigation dispatch calls a navigation action, and popToTop will take
-                // the user back to the very first screen of the stack
-                navigation.dispatch(StackActions.popToTop());
-                return true;
-            })
-            .catch((error) => {
-                Alert.alert('Error!', error.message);
-                return false;
-            });
-        };
+    // const doUserLogout=()=>{
+    //     AsyncStorage.clear()
+    //     this.this.props.navigation.navigate("Login")
+    // }
 
     return (
         <View style={styles.button}>
             <TouchableOpacity
-                onPress={
-                    () => doUserLogout()}
+                onPress={handleSubmitPress}
                 style={styles.touch}>
                 
                 <Text style={styles.text}>
