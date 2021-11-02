@@ -1,6 +1,7 @@
 // In App.js in a new project
 
 import * as React from 'react';
+import "react-native-gesture-handler";
 import { NavigationContainer } from '@react-navigation/native';
 import Router from './router';
 import { Login } from './pages';
