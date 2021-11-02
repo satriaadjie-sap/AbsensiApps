@@ -1,20 +1,30 @@
 import axios, { Axios } from 'axios'
 import { AsyncStorage } from 'react-native'
+// import AsyncStorage from '@react-native-community/async-storage';
 import React, {useState, createRef, useEffect} from 'react'
 import { StyleSheet,Keyboard, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { IconLogin, IconLogoPolman } from '../../assets/icons'
 import {ButtonLogin} from '../../components'
 import { WARNA_PUTIH, WARNA_SEKUNDER, WARNA_UTAMA, LINK_API } from '../../utils/constants'
 import { ForceTouchGestureHandler } from 'react-native-gesture-handler'
-var SharedPreferences = require('react-native-shared-preferences');
+import {YellowBox} from 'react-native';
 
 const Login = ({navigation}) => {    
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
     const [errortext, setErrortext] = useState('');
+    const [foundUsernameAsync, setFoundUsernameAsync] = useState('');
+    const [foundPasswordAsync, setFoundPasswordAsync] = useState('');
 
+    const [foundToken, setFoundToken] = useState('');
     const passwordInputRef = createRef();
+
+    AsyncStorage.getItem('user', (error, result) => {
+            if (result) {
+                navigation.replace('MainApp');
+            }
+        });
 
     const handleSubmitPress = () => {
         setErrortext('');
@@ -31,12 +41,28 @@ const Login = ({navigation}) => {
     
         axios
             .get(`${LINK_API}Login/LoginUser?username=${username}&&password=${password}`)
-            .then(res => {
+            .then(async (res) => {
+                // if(res.data.result === "TRUE" && res.data.rol_id === "ROL23") {
                 if(res.data.result === "TRUE") {
+                    let uname = res.data.username;
+                    let pass = res.data.password;
+                    let name = res.data.nama;
+                    let address = res.data.alamat;
+                
+                    let data = {
+                        uname: uname,
+                        pass: pass,
+                        name: name,
+                        address: address
+
+                    }
+                    AsyncStorage.setItem('user', JSON.stringify(data));
                     navigation.replace('MainApp');
                 }
                 else
                 {
+                    // navigation.replace('MainAppKry');
+                    console.log(error);
                     alert('Username atau password salah!');
                     return;
                 }

@@ -6,26 +6,17 @@ import { AsyncStorage } from 'react-native'
 
 import { WARNA_BG_FORM, WARNA_MERAH, WARNA_PUTIH, WARNA_SEKUNDER } from '../../utils/constants'
 
-const Beranda = ({hasAbsen=false, navigation}) => {
-
-    const handleSubmitPress = () => {
-        
-            // Mengahpus data dari local storage
-            AsyncStorage.removeItem('user');
-            navigation.replace("Login")
-        
-    }
-
+const Beranda_karyawan = ({hasAbsen=false, navigation}) => {
     return (
         <View style={ styles.page }>            
             <ScrollView  style={styles.containerScroll}>
                 <View style={styles.container}>
                     <Text style={styles.textUtama}>
                         Selamat Datang!{"\n\n"}
-                        Ini merupakan halaman beranda dari Aplikasi Formulir Absensi dan Pendataan Kesehatan Mahasiswa.{"\n\n"}
-                        Formulir ini wajib diisi harian oleh seluruh mahasiswa Polman Astra. Data yang masuk setiap hari dipergunakan untuk memonitor kondisi seluruh mahasiswa Polman Astra dan ada tindakan khusus bila diperlukan.{"\n\n"}
+                        Ini merupakan halaman beranda dari Aplikasi Formulir Absensi dan Pendataan Kesehatan Karyawan.{"\n\n"}
+                        Formulir ini wajib diisi harian oleh seluruh karyawan Politeknik Astra. Data yang masuk setiap hari dipergunakan untuk memonitor kondisi seluruh karyawan Polman Astra dan ada tindakan khusus bila diperlukan.{"\n\n"}
                         Apabila dirasa ada yang perlu disampaikan secara khusus dan urgent silahkan menghubungi langsung tim DKAK ataupun tim kendali COVID-19 Polman Astra (Ka. Dept DKAK atau Ka. Dept DPUSDM).{"\n\n"}
-                        Diharapkan semua mahasiswa Polman Astra dapat mengisi dengan benar data kesehatan harian dan absensi ini dan menjadi bagian dari absen harian seperti saat perkuliahan dalam keadaaan normal.
+                        Diharapkan semua karyawan Polman Astra dapat mengisi dengan benar data kesehatan harian dan absensi ini dan menjadi bagian dari absen harian seperti saat perkuliahan dalam keadaaan normal.
                     </Text>
                     <InformasiPengisian/> 
                     {/* NOTIFIKASI PENGISIAN AKAN AKTIF JIKA SUDAH MENGISI FORMULIR*/}
@@ -33,7 +24,7 @@ const Beranda = ({hasAbsen=false, navigation}) => {
                     {hasAbsen == true ? <NotifPengisian/>  : <ButtonIsiFormulir navigation = {navigation}/>}
                     <TouchableOpacity 
                         style={{alignItems:'center', backgroundColor:WARNA_MERAH}} 
-                        onPress={handleSubmitPress}>
+                        onPress={() => navigation.replace("Login")}>
                         <Text style={{color:WARNA_PUTIH}}>Logout</Text>
                     </TouchableOpacity>
                     <Text style={styles.textKesulitan}>
