@@ -2,8 +2,6 @@ import React from 'react'
 import { SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { ButtonIsiFormulir, HeaderApps, HeaderInformation, InformasiPengisian, NotifPengisian } from '../../components'
 
-import { AsyncStorage } from 'react-native'
-
 import { WARNA_BG_FORM, WARNA_MERAH, WARNA_PUTIH, WARNA_SEKUNDER } from '../../utils/constants'
 
 const Beranda_karyawan = ({hasAbsen=false, navigation}) => {
@@ -36,7 +34,7 @@ const Beranda_karyawan = ({hasAbsen=false, navigation}) => {
     )
 }
 
-export default Beranda
+export default Beranda_karyawan
 
 const styles = StyleSheet.create({
     page:{ 
