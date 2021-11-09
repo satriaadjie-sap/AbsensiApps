@@ -21,10 +21,17 @@ const Login = ({navigation}) => {
     const passwordInputRef = createRef();
 
     AsyncStorage.getItem('user', (error, result) => {
-            if (result) {
+        if(result){
+            //Parse result ke JSON
+            let resultParsed = JSON.parse(result)
+            if (resultParsed.role === "ROL23") {
                 navigation.replace('MainApp');
+            } else {
+                navigation.replace('MainAppKry');
             }
-        });
+        }
+    });
+        
 
     const handleSubmitPress = () => {
         setErrortext('');
@@ -44,20 +51,40 @@ const Login = ({navigation}) => {
             .then(async (res) => {
                 // if(res.data.result === "TRUE" && res.data.rol_id === "ROL23") {
                 if(res.data.result === "TRUE") {
-                    let uname = res.data.username;
-                    let pass = res.data.password;
-                    let name = res.data.nama;
-                    let address = res.data.alamat;
-                
-                    let data = {
-                        uname: uname,
-                        pass: pass,
-                        name: name,
-                        address: address
+                    if(res.data.rol_id === "ROL23"){
+                        let uname = res.data.username;
+                        let pass = res.data.password;
+                        let name = res.data.nama;
+                        let address = res.data.alamat;
+                        let rol_id = res.data.rol_id;
+                    
+                        let data = {
+                            uname: uname,
+                            pass: pass,
+                            name: name,
+                            address: address,
+                            role: rol_id
 
+                        }
+                        AsyncStorage.setItem('user', JSON.stringify(data));
+                        navigation.replace('MainApp');
+                    } else {
+                        let uname = res.data.username;
+                        let pass = res.data.password;
+                        let name = res.data.nama;
+                        let address = res.data.alamat;
+                        let rol_id = res.data.rol_id;
+                    
+                        let data = {
+                            uname: uname,
+                            pass: pass,
+                            name: name,
+                            address: address,
+                            role: rol_id
+                        }
+                        AsyncStorage.setItem('user', JSON.stringify(data));
+                        navigation.replace('MainAppKry');
                     }
-                    AsyncStorage.setItem('user', JSON.stringify(data));
-                    navigation.replace('MainApp');
                 }
                 else
                 {
