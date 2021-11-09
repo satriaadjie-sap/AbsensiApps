@@ -4,8 +4,6 @@ import { useNavigation } from '@react-navigation/native';
 import { Alert, StyleSheet, Text, TouchableOpacity, View, Button } from 'react-native'
 import { IconLogoPolman } from '../../assets/icons'
 import { WARNA_PUTIH, WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
-// import { ButtonIsiFormulir} from 'components'
-
 // import { AsyncStorage } from '@react-navigation-async-storage/async-storage'
 
 const HeaderApps = ({}) => {
@@ -31,12 +29,6 @@ const HeaderApps = ({}) => {
                     Logout
                 </Text>
             </TouchableOpacity>
-            {/* {<ButtonIsiFormulir navigation = {navigation}/>} */}
-                        {/* <TouchableOpacity 
-                            style={{alignItems:'center', backgroundColor:WARNA_SEKUNDER}} 
-                            onPress={handleSubmitPress}>
-                            <Text style={{color:WARNA_PUTIH}}>Logout</Text>
-                        </TouchableOpacity> */}
         </View>
     )
 }

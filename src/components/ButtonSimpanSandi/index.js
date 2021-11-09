@@ -8,6 +8,7 @@ const ButtonSimpanSandi = ({baru}) => {
             <TouchableOpacity 
                 style={styles.button}
                 onPress={() => Alert.alert(baru)}
+                //onPress={handleSubmitPress}
             >
                 <Text style={styles.text}>SIMPAN</Text>
             </TouchableOpacity>            
