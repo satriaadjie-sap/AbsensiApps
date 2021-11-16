@@ -55,7 +55,7 @@ export default class Riwayat_pengumuman_detail extends Component{
                                 <Image
                                     source={{
                                         uri : state.data.pen_isi,
-                                        // uri: "https://satgas-covid19.polman.astra.ac.id/Files/IMGTINYMCE/PENGUMUMAN_LLNb2zjkpIoFw31zZLNdWziHcIBJ7wBhYMTXmjV1FEBNzgvJZNbQSzGQMo1=01h=.jpg",
+                                        uri: "https://satgas-covid19.polman.astra.ac.id/Files/IMGTINYMCE/PENGUMUMAN_LLNb2zjkpIoFw31zZLNdWziHcIBJ7wBhYMTXmjV1FEBNzgvJZNbQSzGQMo1=01h=.jpg",
                                         cache: 'only-if-cached'
                                     }}
                                     style={styles.image}

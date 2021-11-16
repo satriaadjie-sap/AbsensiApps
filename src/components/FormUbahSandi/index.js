@@ -83,7 +83,7 @@ const FormUbahSandi = ({}) => {
             <View style={styles.penting}>
                 <Text style={styles.textPenting}>
                 PENTING! {"\n"}
-                Perubahan kata sandi akan berpengaruh pada seluruh aplikasi, akses hotspot, dan login PC/laptop Anda!
+                Perubahan kata sandi akan berpengaruh pada seluruh aplikasi, akses hotspot, dan login Handphone Anda!
                 </Text>
             </View> 
             <View style={styles.formInput}>

@@ -1,17 +1,21 @@
-import React , { Component } from 'react';
+import React , { Component, useState } from 'react';
+import axios, { Axios } from 'axios'
+import { AsyncStorage } from 'react-native'
 import { StyleSheet, Text, View } from 'react-native'
 import { Table, Row,TableWrapper, Cell } from 'react-native-table-component';
 import { DataTable } from 'react-native-paper';
 import { CellAksiPengumuman } from '..';
-import { WARNA_HITAM, WARNA_PUTIH, WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants';
+import { WARNA_HITAM, WARNA_PUTIH, WARNA_SEKUNDER, WARNA_UTAMA, LINK_API  } from '../../utils/constants';
 
-// const TablePengumuman = () => {
-//     return (
-//         <View>
-//             <Text></Text>
-//         </View>
-//     )
-// }
+let usern = '';
+
+AsyncStorage.getItem('user', (error, result) => {
+        if(result){
+            //Parse result ke JSON
+            let resultParsed = JSON.parse(result)
+            usern = resultParsed.uname;
+        }
+    });
 
 export default class TablePengumuman extends Component {
     constructor(props) {
@@ -22,37 +26,40 @@ export default class TablePengumuman extends Component {
         tableData: []
       }      
     }
+
     GetPengumuman = () => {
-        fetch('http://10.0.2.2:8080/listMspengumuman')
-        .then(response => response.json())
-        .then(json => {
-            console.log(json)
-            this.setState({
-              tableData:json
+        axios
+            .get(`${LINK_API}Historypengumuman/getListPengumumanMahasiswa?user=${usern}`)
+            .then(res => {
+              this.setState({
+                tableData:res.data
+              })
             })
-        })
-    }
+         }
+
     componentDidMount(){
       this.GetPengumuman();
-    }
+    }   
+
     render() {
       const state = this.state;
       const props = this.props;
       let myRow = this.state.tableData.map((myValue,myIndex)=>{
           return(
             <DataTable.Row key={myIndex} style={styles.row}>
+            
                 <DataTable.Cell  style={{flex: 0.3}}>
-                  <Text style={styles.textData}>{myIndex+1}</Text>
-                </DataTable.Cell>
+                  <Text style={styles.textData}>{myIndex+1}</Text></DataTable.Cell>
+
                 <DataTable.Cell  style={{flex: 1.5}}>
-                  <Text style={styles.textData} numberOfLines={1}>{myValue.pen_subyek}</Text>
-                </DataTable.Cell>
+                  <Text style={styles.textData} numberOfLines={1}>{myValue.pen_subyek}</Text></DataTable.Cell>
+                
                 <DataTable.Cell  style={{flex: 1.5}}>
-                  <Text style={styles.textData}>{myValue.pen_created_date}</Text>
-                </DataTable.Cell>
+                  <Text style={styles.textData}>{myValue.pen_created_date}</Text></DataTable.Cell>
+                
                 <DataTable.Cell  style={{flex: 0.5}}>
-                  <CellAksiPengumuman navigation={props.navigation} pen_id={myValue.pen_id}/>
-                </DataTable.Cell>
+                  <CellAksiPengumuman navigation={props.navigation} pen_id={myValue.pen_id}/></DataTable.Cell>
+            
             </DataTable.Row>
           )
       });
