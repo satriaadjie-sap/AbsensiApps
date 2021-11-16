@@ -1,11 +1,21 @@
 import React, { Component } from 'react';
 import axios, { Axios } from 'axios'
+import { AsyncStorage } from 'react-native'
 import { StyleSheet,Button, Text, View, TouchableOpacity, Alert } from 'react-native'
 import { DataTable } from 'react-native-paper';
 import { Table, Row,TableWrapper, Cell, Rows } from 'react-native-table-component';
 import { CellAksiFormulir } from '..';
 import { WARNA_HITAM, WARNA_PUTIH, WARNA_SEKUNDER, WARNA_UTAMA, LINK_API } from '../../utils/constants';
 
+let id = '';
+
+AsyncStorage.getItem('user', (error, result) => {
+        if(result){
+            //Parse result ke JSON
+            let resultParsed = JSON.parse(result)
+            id = resultParsed.uname;
+        }
+    });
 
 export default class TablePengisianMahasiswa extends Component {
     constructor(props) {
@@ -16,14 +26,15 @@ export default class TablePengisianMahasiswa extends Component {
         tableData: []
       }      
     }
-
+    
     GetDataAbsensi = () => {
 
       axios
-      .get(`${LINK_API}Absensi/GetListAbsensiMahasiswa?id=0320190024&&fma_bulan=November&&fma_tanggal=t.fma_tanggal`)
+      .get(`${LINK_API}Absensi/GetListAbsensiMahasiswa?id=${id}&&fma_bulan=November&&fma_tanggal=t.fma_tanggal`)
       .then( res => {
             this.setState({
               tableData:res.data
+            
             })
           })
     }
