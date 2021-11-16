@@ -17,7 +17,7 @@ export default class TablePengisianMahasiswa extends Component {
       }      
     }
 
-    GetDataAbsensiMahasiswa = () => {
+    GetDataAbsensi = () => {
 
       axios
       .get(`${LINK_API}Absensi/GetListAbsensiMahasiswa?id=0320190024&&fma_bulan=November&&fma_tanggal=t.fma_tanggal`)
@@ -28,7 +28,7 @@ export default class TablePengisianMahasiswa extends Component {
           })
     }
     componentDidMount(){
-      this.GetDataAbsensiMahasiswa();
+      this.GetDataAbsensi();
     }
     render() {
       const state = this.state;
@@ -46,7 +46,7 @@ export default class TablePengisianMahasiswa extends Component {
                 <Text style={styles.textData}>{myValue.fma_status}</Text>
               </DataTable.Cell>
               <DataTable.Cell  style={{flex: 0.5}}>
-                <CellAksiFormulir navigation = {props.navigation} fma_id = {myValue.for_id}/>
+                <CellAksiFormulir navigation = {props.navigation} fma_id = {myValue.fma_id}/>
               </DataTable.Cell>
           </DataTable.Row>
         )
