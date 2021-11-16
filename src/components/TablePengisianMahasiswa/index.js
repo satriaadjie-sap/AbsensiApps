@@ -7,7 +7,7 @@ import { CellAksiFormulir } from '..';
 import { WARNA_HITAM, WARNA_PUTIH, WARNA_SEKUNDER, WARNA_UTAMA, LINK_API } from '../../utils/constants';
 
 
-export default class TablePengisian extends Component {
+export default class TablePengisianMahasiswa extends Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -17,10 +17,10 @@ export default class TablePengisian extends Component {
       }      
     }
 
-    GetDataAbsensi = () => {
+    GetDataAbsensiMahasiswa = () => {
 
       axios
-      .get(`${LINK_API}Absensi/GetListAbsensiKaryawan?id=suhendra&&for_bulan=11&&for_tanggal=t.for_tanggal`)
+      .get(`${LINK_API}Absensi/GetListAbsensiMahasiswa?id=0320190024&&fma_bulan=November&&fma_tanggal=t.fma_tanggal`)
       .then( res => {
             this.setState({
               tableData:res.data
@@ -28,7 +28,7 @@ export default class TablePengisian extends Component {
           })
     }
     componentDidMount(){
-      this.GetDataAbsensi();
+      this.GetDataAbsensiMahasiswa();
     }
     render() {
       const state = this.state;
@@ -40,10 +40,10 @@ export default class TablePengisian extends Component {
                 <Text style={styles.textData}>{myIndex+1}</Text>
               </DataTable.Cell>
               <DataTable.Cell  style={{flex: 2}}>
-                <Text style={styles.textData}>{myValue.for_tanggal}</Text>
+                <Text style={styles.textData}>{myValue.fma_tanggal}</Text>
               </DataTable.Cell>
               <DataTable.Cell  style={{flex: 1}}>
-                <Text style={styles.textData}>{myValue.for_status}</Text>
+                <Text style={styles.textData}>{myValue.fma_status}</Text>
               </DataTable.Cell>
               <DataTable.Cell  style={{flex: 0.5}}>
                 <CellAksiFormulir navigation = {props.navigation} fma_id = {myValue.for_id}/>
