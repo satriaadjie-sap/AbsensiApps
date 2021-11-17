@@ -5,6 +5,7 @@ import InformasiPengisian from './InformasiPengisian'
 import NotifPengisian from './NotifPengisian'
 import ButtonIsiFormulir from './ButtonIsiFormulir'
 import TablePengisian from './TablePengisian'
+import TablePengisianMahasiswa from './TablePengisianMahasiswa'
 import TablePengumuman from './TablePengumuman'
 import CellAksiFormulir from './CellAksiFormulir'
 import CellAksiPengumuman from './CellAksiPengumuman'
@@ -35,7 +36,7 @@ import {FormPengisian_5_1, ButtonSelesai, ButtonUnduhFormulir} from './component
 import {ButtonKembali, Form_1, Form_2, Form_3, Form_4,
     TemplateInfo, CheckboxPenyakit,TableKesehatan, TemplateRow} from './components_abs_detail'
 
-export {TablePengisian, BottomTabNavigator, HeaderInformation, HeaderApps,
+export {TablePengisian, TablePengisianMahasiswa, BottomTabNavigator, HeaderInformation, HeaderApps,
     InformasiPengisian, NotifPengisian, ButtonIsiFormulir, CellAksiFormulir,
     TablePengumuman, CellAksiPengumuman, FormUbahSandi, ButtonSimpanSandi,
     HeaderFormAbsesni, InformasiDataDiri, FormPengisian_1_1, InformasiTinggalBersama,

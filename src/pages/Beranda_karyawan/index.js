@@ -20,11 +20,7 @@ const Beranda_karyawan = ({hasAbsen=false, navigation}) => {
                     {/* NOTIFIKASI PENGISIAN AKAN AKTIF JIKA SUDAH MENGISI FORMULIR*/}
                     {/* BUTTON ISI FORMULIR AKAN AKTTIF JIKA BELUM MENGISI FORMULIR */}
                     {hasAbsen == true ? <NotifPengisian/>  : <ButtonIsiFormulir navigation = {navigation}/>}
-                    <TouchableOpacity 
-                        style={{alignItems:'center', backgroundColor:WARNA_MERAH}} 
-                        onPress={() => navigation.replace("Login")}>
-                        <Text style={{color:WARNA_PUTIH}}>Logout</Text>
-                    </TouchableOpacity>
+                
                     <Text style={styles.textKesulitan}>
                         Jika terdapat kesulitan tentang cara penggunaan aplikasi ini, silahkan menghubungi MIS / Bang Candra.
                     </Text>

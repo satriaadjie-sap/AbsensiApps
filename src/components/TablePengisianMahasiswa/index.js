@@ -17,7 +17,7 @@ AsyncStorage.getItem('user', (error, result) => {
         }
     });
 
-export default class TablePengisian extends Component {
+export default class TablePengisianMahasiswa extends Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -26,14 +26,15 @@ export default class TablePengisian extends Component {
         tableData: []
       }      
     }
-
+    
     GetDataAbsensi = () => {
 
       axios
-      .get(`${LINK_API}Absensi/GetListAbsensiKaryawan?id=${id}&&for_bulan=11&&for_tanggal=t.for_tanggal`)
+      .get(`${LINK_API}Absensi/GetListAbsensiMahasiswa?id=${id}&&fma_bulan=November&&fma_tanggal=t.fma_tanggal`)
       .then( res => {
             this.setState({
               tableData:res.data
+            
             })
           })
     }
@@ -50,13 +51,13 @@ export default class TablePengisian extends Component {
                 <Text style={styles.textData}>{myIndex+1}</Text>
               </DataTable.Cell>
               <DataTable.Cell  style={{flex: 2}}>
-                <Text style={styles.textData}>{myValue.for_tanggal}</Text>
+                <Text style={styles.textData}>{myValue.fma_tanggal}</Text>
               </DataTable.Cell>
               <DataTable.Cell  style={{flex: 1}}>
-                <Text style={styles.textData}>{myValue.for_status}</Text>
+                <Text style={styles.textData}>{myValue.fma_status}</Text>
               </DataTable.Cell>
               <DataTable.Cell  style={{flex: 0.5}}>
-                <CellAksiFormulir navigation = {props.navigation} fma_id = {myValue.for_id}/>
+                <CellAksiFormulir navigation = {props.navigation} fma_id = {myValue.fma_id}/>
               </DataTable.Cell>
           </DataTable.Row>
         )
