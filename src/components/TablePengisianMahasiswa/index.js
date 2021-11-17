@@ -30,11 +30,10 @@ export default class TablePengisianMahasiswa extends Component {
     GetDataAbsensi = () => {
 
       axios
-      .get(`${LINK_API}Absensi/GetListAbsensiMahasiswa?id=${id}&&fma_bulan=November&&fma_tanggal=t.fma_tanggal`)
-      .then( res => {
+      .get(`${LINK_API}Absensi/GetListAbsensiMahasiswa?id=${id}`)
+      .then( async (res) => {
             this.setState({
               tableData:res.data
-            
             })
           })
     }
@@ -51,7 +50,7 @@ export default class TablePengisianMahasiswa extends Component {
                 <Text style={styles.textData}>{myIndex+1}</Text>
               </DataTable.Cell>
               <DataTable.Cell  style={{flex: 2}}>
-                <Text style={styles.textData}>{myValue.fma_tanggal}</Text>
+                <Text style={styles.textData}>{myValue.fma_tanggal_waktu}</Text>
               </DataTable.Cell>
               <DataTable.Cell  style={{flex: 1}}>
                 <Text style={styles.textData}>{myValue.fma_status}</Text>

@@ -30,8 +30,8 @@ export default class TablePengisian extends Component {
     GetDataAbsensi = () => {
 
       axios
-      .get(`${LINK_API}Absensi/GetListAbsensiKaryawan?id=${id}&&for_bulan=11&&for_tanggal=t.for_tanggal`)
-      .then( res => {
+      .get(`${LINK_API}Absensi/GetListAbsensiKaryawan?id=${id}`)
+      .then(async (res) => {
             this.setState({
               tableData:res.data
             })
@@ -50,7 +50,7 @@ export default class TablePengisian extends Component {
                 <Text style={styles.textData}>{myIndex+1}</Text>
               </DataTable.Cell>
               <DataTable.Cell  style={{flex: 2}}>
-                <Text style={styles.textData}>{myValue.for_tanggal}</Text>
+                <Text style={styles.textData}>{myValue.for_tanggal_waktu}</Text>
               </DataTable.Cell>
               <DataTable.Cell  style={{flex: 1}}>
                 <Text style={styles.textData}>{myValue.for_status}</Text>
