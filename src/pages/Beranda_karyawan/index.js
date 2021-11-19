@@ -1,10 +1,34 @@
 import React from 'react'
 import { SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { ButtonIsiFormulir, HeaderApps, HeaderInformation, InformasiPengisian, NotifPengisian } from '../../components'
-
 import { WARNA_BG_FORM, WARNA_MERAH, WARNA_PUTIH, WARNA_SEKUNDER } from '../../utils/constants'
 
+let rolget = '';
+
 const Beranda_karyawan = ({hasAbsen=false, navigation}) => {
+
+const [rolen, setRolen] = useState('');
+const data = "Hello Everyone";
+
+    AsyncStorage.getItem('user', (error, result) => {
+        if(result){
+            //Parse result ke JSON
+            let resultParsed = JSON.parse(result)
+            rolget = resultParsed.role;
+        }
+    });
+
+    //const myFunction = () => {
+        if (rolget == "ROL23"){
+            setRolen('Mahasiswa');
+            //rolen => setRolen(rolen)        
+        }
+        else if (rolget== "ROL01"){
+            setRolen('Karyawan');
+            //rolen => setRolen(rolen) 
+        }
+    //}
+
     return (
         <View style={ styles.page }>            
             <ScrollView  style={styles.containerScroll}>
@@ -16,15 +40,15 @@ const Beranda_karyawan = ({hasAbsen=false, navigation}) => {
                         Apabila dirasa ada yang perlu disampaikan secara khusus dan urgent silahkan menghubungi langsung tim DKAK ataupun tim kendali COVID-19 Polman Astra (Ka. Dept DKAK atau Ka. Dept DPUSDM).{"\n\n"}
                         Diharapkan semua karyawan Polman Astra dapat mengisi dengan benar data kesehatan harian dan absensi ini dan menjadi bagian dari absen harian seperti saat perkuliahan dalam keadaaan normal.
                     </Text>
-                    <InformasiPengisian/> 
+                    <InformasiPengisian data={data} /> 
                     {/* NOTIFIKASI PENGISIAN AKAN AKTIF JIKA SUDAH MENGISI FORMULIR*/}
                     {/* BUTTON ISI FORMULIR AKAN AKTTIF JIKA BELUM MENGISI FORMULIR */}
                     {hasAbsen == true ? <NotifPengisian/>  : <ButtonIsiFormulir navigation = {navigation}/>}
-                    <TouchableOpacity 
+                    {/* <TouchableOpacity 
                         style={{alignItems:'center', backgroundColor:WARNA_MERAH}} 
                         onPress={() => navigation.replace("Login")}>
                         <Text style={{color:WARNA_PUTIH}}>Logout</Text>
-                    </TouchableOpacity>
+                    </TouchableOpacity> */}
                     <Text style={styles.textKesulitan}>
                         Jika terdapat kesulitan tentang cara penggunaan aplikasi ini, silahkan menghubungi MIS / Bang Candra.
                     </Text>
