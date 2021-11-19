@@ -35,10 +35,11 @@ import {FormPengisian_4_1, ButtonBatal4, ButtonSelanjutnya4,
 import {FormPengisian_5_1, ButtonSelesai, ButtonUnduhFormulir} from './components_abs5'
 import {ButtonKembali, Form_1, Form_2, Form_3, Form_4,
     TemplateInfo, CheckboxPenyakit,TableKesehatan, TemplateRow} from './components_abs_detail'
+import {TablePengumumanKry, TablePengumumanMhs, TablePengumumanSatgas} from './TablePengumuman'
 
 export {TablePengisian, TablePengisianMahasiswa, BottomTabNavigator, HeaderInformation, HeaderApps,
     InformasiPengisian, NotifPengisian, ButtonIsiFormulir, CellAksiFormulir,
-    TablePengumuman, CellAksiPengumuman, FormUbahSandi, ButtonSimpanSandi,
+    TablePengumuman, TablePengumumanMhs, TablePengumumanKry, TablePengumumanSatgas, CellAksiPengumuman, FormUbahSandi, ButtonSimpanSandi,
     HeaderFormAbsesni, InformasiDataDiri, FormPengisian_1_1, InformasiTinggalBersama,
     FormPengisian_1_2, ButtonSalin, FormPengisian_1_3, FormPengisian_1_4, FormPengisian_1_5,
     FormPengisian_1_6, ButtonBatal1, ButtonSelanjutnya1, FormPengisian_2_1, FormPengisian_2_2,

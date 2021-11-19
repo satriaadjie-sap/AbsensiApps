@@ -30,8 +30,7 @@ const Login = ({navigation}) => {
                 navigation.replace('MainAppKry');
             }
         }
-    });
-        
+    }); 
 
     const handleSubmitPress = () => {
         setErrortext('');

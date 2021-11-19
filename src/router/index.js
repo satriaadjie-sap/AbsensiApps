@@ -2,15 +2,13 @@ import React from 'react'
 import { StyleSheet, Text, View} from 'react-native'
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import {Beranda, Beranda_karyawan, Riwayat_absensi, Riwayat_absensi_mahasiswa, Riwayat_pengumuman, Testing, Ubah_sandi, Login} from '../pages';
+import {Beranda, Beranda_karyawan, Form_absensi, Riwayat_absensi, Riwayat_absensi_mahasiswa, Riwayat_pengumuman, Riwayat_pengumuman_karyawan, Testing, Ubah_sandi, Login} from '../pages';
 import { BottomTabNavigator, HeaderApps, HeaderInformation } from '../components';
 import { IconLogoPolman } from '../assets';
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../utils/constants';
 
-
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
-
 
 const MainApp = () => {    
     return (
@@ -30,7 +28,7 @@ const MainAppKry = () => {
         <Tab.Navigator tabBar={props => <BottomTabNavigator {...props} />}>
             <Tab.Screen name="Beranda" component={Beranda_karyawan} />
             <Tab.Screen name="Form Absensi" component={Riwayat_absensi} />
-            <Tab.Screen name="Pengumuman" component={Riwayat_pengumuman} />
+            <Tab.Screen name="Pengumuman" component={Riwayat_pengumuman_karyawan} />
             <Tab.Screen name="Ubah Sandi" component={Ubah_sandi} />
             {/* <Tab.Screen name="LogOut" component={Logout} /> */}
             {/* <Tab.Screen name="Login" component={Login} /> */}

@@ -1,13 +1,56 @@
-import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import { WARNA_BIRU } from '../../utils/constants'
+import React, { Component, useState, createRef, useEffect } from 'react'
+import { StyleSheet, Text, button, TextInput, View , AsyncStorage, TouchableOpacity} from 'react-native'
+import { WARNA_BIRU, WARNA_UTAMA } from '../../utils/constants'
 
-const InformasiPengisian = () => {
+let rolget = '';
+
+const InformasiPengisian = (props) => {
+    
+// const [rolen, setRolen] = useState('');
+
+// AsyncStorage.getItem('user', (error, result) => {
+//         if(result){
+//             //Parse result ke JSON
+//             let resultParsed = JSON.parse(result)
+//             rolget = resultParsed.role;
+//         }
+//     });
+
+    // const myFunction = () => {
+    //     if (rolget == "ROL23"){
+    //         setRolen('Mahasiswa');
+    //         //rolen => setRolen(rolen)        
+    //     }
+    //     else if (rolget== "ROL01"){
+    //         setRolen('Karyawan');
+    //         //rolen => setRolen(rolen) 
+    //     }
+    // }
+
     return (
         <View style={styles.container}>
             <Text style={styles.text}>
-                Formulir absensi dan pendataan kesehatan mahasiswa tersedia mulai pukul 04.30 - 09.00 WIPA untuk hari ini.
+                {props.data}
+                Formulir absensi dan pendataan kesehatan 
+                tersedia mulai pukul 04.30 - 09.00 WIPA untuk hari ini.
             </Text>
+        
+            {/* <View style={styles.containerbut}>
+                <TouchableOpacity 
+                    style={styles.button}
+                    //onPress={() => Alert.alert(baru)}
+                    onPress={myFunction}
+                >
+                    <Text style={styles.text}>SIMPAN</Text>
+                </TouchableOpacity>  
+            </View>    */}
+
+            {/* <TextInput 
+                onChangeText={rolen => setRolen(rolen)}
+                value={rolen}
+                placeholder="enter here"
+            /> */}
+
         </View>
     )
 }
@@ -26,5 +69,11 @@ const styles = StyleSheet.create({
         color:WARNA_BIRU,
         fontFamily:'Poppins-Bold',
         fontSize:12
-    }
+    },
+    button:{
+        backgroundColor:WARNA_UTAMA,
+        width:79,
+        alignItems:'center',
+        paddingVertical:2
+    },
 })

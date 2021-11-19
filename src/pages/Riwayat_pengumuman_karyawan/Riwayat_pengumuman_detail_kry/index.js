@@ -6,7 +6,7 @@ import { ButtonTutupPengumuman } from '../../../components'
 import { WARNA_HITAM } from '../../../utils/constants'
 
 
-export default class Riwayat_pengumuman_detail extends Component{
+export default class Riwayat_pengumuman_detail_kry extends Component{
     constructor(props){
         super(props);
         this.state = {
