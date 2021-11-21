@@ -3,10 +3,10 @@ import { StyleSheet, Text, View} from 'react-native'
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {Beranda, Beranda_karyawan, Form_absensi, Riwayat_pengumuman, Testing, Ubah_sandi, Login} from '../pages';
-// import {Form_absensi_4} from '../pages/Form_absensi/Form_routing';
 import { BottomTabNavigator, HeaderApps, HeaderInformation } from '../components';
 import { IconLogoPolman } from '../assets';
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../utils/constants';
+// import {Form_absensi_4} from '../pages/Form_absensi/Form_routing';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
