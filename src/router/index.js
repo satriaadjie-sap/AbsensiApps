@@ -6,7 +6,6 @@ import {Beranda, Beranda_karyawan, Form_absensi, Riwayat_pengumuman, Testing, Ub
 import { BottomTabNavigator, HeaderApps, HeaderInformation } from '../components';
 import { IconLogoPolman } from '../assets';
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../utils/constants';
-// import {Form_absensi_4} from '../pages/Form_absensi/Form_routing';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -37,18 +36,18 @@ const MainAppKry = () => {
     )
 }
 
-const Absensi4 = () => {    
-    return (
-        <Tab.Navigator tabBar={props => <BottomTabNavigator {...props} />}>
-            <Tab.Screen name="Beranda" component={Beranda} />
-            <Tab.Screen name="Form Absensi" component={Form_absensi_4} />
-            <Tab.Screen name="Pengumuman" component={Riwayat_pengumuman} />
-            <Tab.Screen name="Ubah Sandi" component={Ubah_sandi} />
-            {/* <Tab.Screen name="LogOut" component={Logout} /> */}
-            {/* <Tab.Screen name="Login" component={Login} /> */}
-        </Tab.Navigator>        
-    )
-}
+// const Absensi4 = () => {    
+//     return (
+//         <Tab.Navigator tabBar={props => <BottomTabNavigator {...props} />}>
+//             <Tab.Screen name="Beranda" component={Beranda} />
+//             <Tab.Screen name="Form Absensi" component={Form_absensi_4} />
+//             <Tab.Screen name="Pengumuman" component={Riwayat_pengumuman} />
+//             <Tab.Screen name="Ubah Sandi" component={Ubah_sandi} />
+//             {/* <Tab.Screen name="LogOut" component={Logout} /> */}
+//             {/* <Tab.Screen name="Login" component={Login} /> */}
+//         </Tab.Navigator>        
+//     )
+// }
 
 function Header() {
     return (
@@ -88,13 +87,13 @@ const Router = () => {
                     { headerTitle: props => <Header {... props}/>,headerStyle:{height:160}}
                 }
             />
-            <Stack.Screen 
+            {/* <Stack.Screen 
                 name="Absensi4" 
                 component={Absensi4}
                 options={
                     { headerTitle: props => <Header {... props}/>,headerStyle:{height:160}}
                 }
-            />
+            /> */}
         </Stack.Navigator>
     )
 }
