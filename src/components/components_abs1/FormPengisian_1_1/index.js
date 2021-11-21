@@ -3,9 +3,16 @@ import {Picker} from '@react-native-picker/picker'
 import {StyleSheet, Text, TextInput, View } from 'react-native'
 import { WARNA_BG_FORM, WARNA_HITAM, WARNA_MERAH, WARNA_PUTIH, WARNA_SEKUNDER } from '../../../utils/constants'
 import InformasiTinggalBersama from '../InformasiTinggalBersama'
+//import { createStore } from 'redux'
+//export const Provinsi = id_provinsi;
 
-
-class FormPengisian_1_1 extends Component {
+class FormPengisian_1_1 extends React.Component {
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         data: "coba"
+    //     };
+    // }
     state = {
         selectedValue:'',
         provinsi:[],
@@ -15,7 +22,7 @@ class FormPengisian_1_1 extends Component {
         kecamatan:[],
         selectedKecamatan:'',
         kelurahan:[],
-        selectedKelurahan:''        
+        selectedKelurahan:''
     }
     GetDataProvinsi = () => {
         fetch('https://dev.farizdotid.com/api/daerahindonesia/provinsi')
@@ -35,6 +42,8 @@ class FormPengisian_1_1 extends Component {
             this.setState({
                 kotakabupaten:json.kota_kabupaten
             })
+            // id_provinsi = '0123813334'
+            setProvinsi(id_provinsi)
         })
     }
     GetDataKecamatan = (id_kota) => {
@@ -45,6 +54,8 @@ class FormPengisian_1_1 extends Component {
             this.setState({
                 kecamatan:json.kecamatan
             })
+            // id_kota = '1'
+            // setKabupaten(id_kota)
         })
     }
     GetDataKelurahan = (id_kecamatan) => {
@@ -64,22 +75,26 @@ class FormPengisian_1_1 extends Component {
     render(){
         let myProvinsi = this.state.provinsi.map((myValue,myIndex)=>{
             return(
-                <Picker.Item label={myValue.id + ' - ' + myValue.nama} value={myValue.id} key={myIndex}/>
+                // <Picker.Item label={myValue.id + ' - ' + myValue.nama} value={myValue.id} key={myIndex}/>
+                <Picker.Item label={myValue.nama} value={myValue.id} key={myIndex}/>
             )
         });
         let myKotakabupaten = this.state.kotakabupaten.map((myValue,myIndex)=>{
             return(
-                <Picker.Item label={myValue.id + ' - ' + myValue.nama} value={myValue.id} key={myIndex}/>
+                // <Picker.Item label={myValue.id + ' - ' + myValue.nama} value={myValue.id} key={myIndex}/>
+                <Picker.Item label={myValue.nama} value={myValue.id} key={myIndex}/>
             )
         });
         let myKecamatan = this.state.kecamatan.map((myValue,myIndex)=>{
             return(
-                <Picker.Item label={myValue.id + ' - ' + myValue.nama} value={myValue.id} key={myIndex}/>
+                // <Picker.Item label={myValue.id + ' - ' + myValue.nama} value={myValue.id} key={myIndex}/>
+                <Picker.Item label={myValue.nama} value={myValue.id} key={myIndex}/>
             )
         });
         let myKelurahan = this.state.kelurahan.map((myValue,myIndex)=>{
             return(
-                <Picker.Item label={myValue.id + ' - ' + myValue.nama} value={myValue.id} key={myIndex}/>
+                // <Picker.Item label={myValue.id + ' - ' + myValue.nama} value={myValue.id} key={myIndex}/>
+                <Picker.Item label={myValue.nama} value={myValue.id} key={myIndex}/>
             )
         });        
         return (
@@ -123,7 +138,8 @@ class FormPengisian_1_1 extends Component {
                         <Text style={styles.Mandatory}> *</Text>
                     </Text>
                     <TextInput 
-                            style={styles.textInput}                    
+                            style={styles.textInput}
+                            // value={data}
                         />
                 </View>
     
@@ -179,7 +195,7 @@ class FormPengisian_1_1 extends Component {
                         </Picker>
                     </View>
                 </View>
-    
+
                 {/* Kecamatan */}
                 <View style={styles.containerQuestion}>
                     <Text style={styles.textHeader}>
