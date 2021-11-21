@@ -31,16 +31,16 @@ const MainForm = () => {
 const Form_absensi = () => {
     return (
         <View style={ styles.page }>
-            {/* <ScrollView style={styles.containerScrollView}> */}
+            <ScrollView style={styles.containerScrollView}>
                 {/* <MainForm/> */}
                 {/* <Form_absensi_sudah/> */}
                 {/* <Form_absensi_detail/> */}
                 <Form_absensi_1/>
-                {/* <Form_absensi_2/> */}
-                {/* <Form_absensi_3/> */}
+                <Form_absensi_2/>
+                <Form_absensi_3/>
                 {/* <Form_absensi_4/> */}
                 {/* <Form_absensi_5/> */}
-            {/* </ScrollView> */}
+            </ScrollView>
         </View>
     )
 }

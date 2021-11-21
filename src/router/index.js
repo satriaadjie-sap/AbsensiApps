@@ -36,9 +36,21 @@ const MainAppKry = () => {
     )
 }
 
-function Header() {
+// const Absensi4 = () => {    
+//     return (
+//         <Tab.Navigator tabBar={props => <BottomTabNavigator {...props} />}>
+//             <Tab.Screen name="Beranda" component={Beranda} />
+//             <Tab.Screen name="Form Absensi" component={Form_absensi_4} />
+//             <Tab.Screen name="Pengumuman" component={Riwayat_pengumuman} />
+//             <Tab.Screen name="Ubah Sandi" component={Ubah_sandi} />
+//             {/* <Tab.Screen name="LogOut" component={Logout} /> */}
+//             {/* <Tab.Screen name="Login" component={Login} /> */}
+//         </Tab.Navigator>        
+//     )
+// }
 
-    return (        
+function Header() {
+    return (
         <View style={styles.containerHeader}>            
             <HeaderApps/>
             <HeaderInformation 
@@ -64,9 +76,6 @@ const Router = () => {
             <Stack.Screen 
                 name="MainApp" 
                 component={MainApp}
-                // options={{                                
-                //     headerShown:false
-                //     }}
                 options={
                     { headerTitle: props => <Header {... props}/>,headerStyle:{height:160}}
                 }
@@ -78,6 +87,13 @@ const Router = () => {
                     { headerTitle: props => <Header {... props}/>,headerStyle:{height:160}}
                 }
             />
+            {/* <Stack.Screen 
+                name="Absensi4" 
+                component={Absensi4}
+                options={
+                    { headerTitle: props => <Header {... props}/>,headerStyle:{height:160}}
+                }
+            /> */}
         </Stack.Navigator>
     )
 }

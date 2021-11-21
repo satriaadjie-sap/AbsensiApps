@@ -6,6 +6,12 @@ import { WARNA_BG_FORM, WARNA_HITAM, WARNA_MERAH, WARNA_PUTIH } from '../../../u
 
 const FormPengisian_2_5 = () => {
     const [isSelected, setSelection] = useState(false);
+    const [isSelected1, setSelection1] = useState(false);
+    const [isSelected2, setSelection2] = useState(false);
+    const [isSelected3, setSelection3] = useState(false);
+    const [isSelected4, setSelection4] = useState(false);
+    const [isSelected5, setSelection5] = useState(false);
+    const [isSelected6, setSelection6] = useState(false);
 
     return (
         <View style={styles.container}>            
@@ -28,8 +34,8 @@ const FormPengisian_2_5 = () => {
                 {/* Diabetes */}
                 <View style={styles.checkboxContainer}>
                     <CheckBox
-                        value={isSelected}
-                        onValueChange={setSelection}
+                        value={isSelected1}
+                        onValueChange={setSelection1}
                     />
                     <Text style={styles.label}>Diabetes</Text>
                 </View>
@@ -37,8 +43,8 @@ const FormPengisian_2_5 = () => {
                 {/* Jantung */}
                 <View style={styles.checkboxContainer}>
                     <CheckBox
-                        value={isSelected}
-                        onValueChange={setSelection}
+                        value={isSelected2}
+                        onValueChange={setSelection2}
                     />
                     <Text style={styles.label}>Jantung</Text>
                 </View>
@@ -46,8 +52,8 @@ const FormPengisian_2_5 = () => {
                 {/* Gangguan Paru-Paru (Misalnya : Asma) */}
                 <View style={styles.checkboxContainer}>
                     <CheckBox
-                        value={isSelected}
-                        onValueChange={setSelection}
+                        value={isSelected3}
+                        onValueChange={setSelection3}
                     />
                     <Text style={styles.label}>Gangguan Paru-Paru (Misalnya : Asma)</Text>
                 </View>
@@ -55,8 +61,8 @@ const FormPengisian_2_5 = () => {
                 {/* Ginjal */}
                 <View style={styles.checkboxContainer}>
                     <CheckBox
-                        value={isSelected}
-                        onValueChange={setSelection}
+                        value={isSelected4}
+                        onValueChange={setSelection4}
                     />
                     <Text style={styles.label}>Ginjal</Text>
                 </View>
@@ -64,8 +70,8 @@ const FormPengisian_2_5 = () => {
                 {/* Lever */}
                 <View style={styles.checkboxContainer}>
                     <CheckBox
-                        value={isSelected}
-                        onValueChange={setSelection}
+                        value={isSelected5}
+                        onValueChange={setSelection5}
                     />
                     <Text style={styles.label}>Lever</Text>
                 </View>
@@ -73,8 +79,8 @@ const FormPengisian_2_5 = () => {
                 {/* Tidak ada satupun  tertera di atas */}
                 <View style={styles.checkboxContainer}>
                     <CheckBox
-                        value={isSelected}
-                        onValueChange={setSelection}
+                        value={isSelected6}
+                        onValueChange={setSelection6}
                     />
                     <Text style={styles.label}>Tidak ada satupun  tertera di atas</Text>
                 </View>
