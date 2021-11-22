@@ -10,7 +10,7 @@ const InformasiDataDiri = ({nim, nama, prodi, tingkat, status, beasiswa, nomor})
                     NIM - NAMA
                 </Text>
                 <Text style={styles.textBody}>
-                    0320190027 - SATRIA ADJIE PRAYOGA
+                    0320190027 - SATRIA ADJIE
                 </Text>
             </View>
             <View style={styles.textContainer}>

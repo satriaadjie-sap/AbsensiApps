@@ -10,7 +10,7 @@ const HeaderInformation = ({user, role,lastLogin,notification}) => {
             {/* Nama last login */}
             <View style={styles.containerUser}>
                 <Text numberOfLines={1} style={styles.textNama}>{user} ({role})</Text>
-                <Text style={styles.lastLogin}>{lastLogin}</Text>
+                {/* <Text style={styles.lastLogin}>{lastLogin}</Text> */}
             </View>
             {/* Notifikasi */}
             <View style={styles.notification}>

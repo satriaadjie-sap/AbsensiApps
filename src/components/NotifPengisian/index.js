@@ -2,11 +2,11 @@ import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { WARNA_HIJAU } from '../../utils/constants'
 
-const NotifPengisian = () => {
+const NotifPengisian = (props) => {
     return (
         <View style={styles.container}>
             <Text style={styles.text}>
-                Anda sudah mengisi formulir absensi dan pendataan kesehatan mahasiswa. Terima kasih.
+                Anda sudah mengisi formulir absensi dan pendataan kesehatan {props.data}. Terima kasih.
             </Text>
         </View>
     )

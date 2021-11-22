@@ -30,8 +30,7 @@ const InformasiPengisian = (props) => {
     return (
         <View style={styles.container}>
             <Text style={styles.text}>
-                {props.data}
-                Formulir absensi dan pendataan kesehatan 
+                Formulir absensi dan pendataan kesehatan {props.data} 
                 tersedia mulai pukul 04.30 - 09.00 WIPA untuk hari ini.
             </Text>
         
