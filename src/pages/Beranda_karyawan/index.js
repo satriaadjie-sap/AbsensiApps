@@ -1,5 +1,5 @@
-import React from 'react'
-import { SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import React, { Component, useState, createRef, useEffect } from 'react'
+import { SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View, AsyncStorage } from 'react-native'
 import { ButtonIsiFormulir, HeaderApps, HeaderInformation, InformasiPengisian, NotifPengisian } from '../../components'
 import { WARNA_BG_FORM, WARNA_MERAH, WARNA_PUTIH, WARNA_SEKUNDER } from '../../utils/constants'
 
@@ -7,27 +7,27 @@ let rolget = '';
 
 const Beranda_karyawan = ({hasAbsen=false, navigation}) => {
 
-const [rolen, setRolen] = useState('');
-const data = "Hello Everyone";
+//const [rolen, setRolen] = useState('');
+const data = " Karyawan ";
 
-    AsyncStorage.getItem('user', (error, result) => {
-        if(result){
-            //Parse result ke JSON
-            let resultParsed = JSON.parse(result)
-            rolget = resultParsed.role;
-        }
-    });
+    // AsyncStorage.getItem('user', (error, result) => {
+    //     if(result){
+    //         //Parse result ke JSON
+    //         let resultParsed = JSON.parse(result)
+    //         rolget = resultParsed.role;
+    //     }
+    // });
 
-    //const myFunction = () => {
-        if (rolget == "ROL23"){
-            setRolen('Mahasiswa');
-            //rolen => setRolen(rolen)        
-        }
-        else if (rolget== "ROL01"){
-            setRolen('Karyawan');
-            //rolen => setRolen(rolen) 
-        }
-    //}
+    // //const myFunction = () => {
+    //     if (rolget == "ROL23"){
+    //         setRolen('Mahasiswa');
+    //         //rolen => setRolen(rolen)        
+    //     }
+    //     else if (rolget== "ROL01"){
+    //         setRolen('Karyawan');
+    //         //rolen => setRolen(rolen) 
+    //     }
+    // //}
 
     return (
         <View style={ styles.page }>            
@@ -43,7 +43,7 @@ const data = "Hello Everyone";
                     <InformasiPengisian data={data} /> 
                     {/* NOTIFIKASI PENGISIAN AKAN AKTIF JIKA SUDAH MENGISI FORMULIR*/}
                     {/* BUTTON ISI FORMULIR AKAN AKTTIF JIKA BELUM MENGISI FORMULIR */}
-                    {hasAbsen == true ? <NotifPengisian/>  : <ButtonIsiFormulir navigation = {navigation}/>}
+                    {hasAbsen == true ? <NotifPengisian data={data}/>  : <ButtonIsiFormulir navigation = {navigation}/>}
                     {/* <TouchableOpacity 
                         style={{alignItems:'center', backgroundColor:WARNA_MERAH}} 
                         onPress={() => navigation.replace("Login")}>

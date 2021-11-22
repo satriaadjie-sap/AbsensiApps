@@ -27,7 +27,6 @@ const Form_absensi_1 = () => {
                 </View>
             </ScrollView>
         </View>
-        
     )
 }
 
