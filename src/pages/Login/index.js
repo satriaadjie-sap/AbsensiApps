@@ -73,13 +73,17 @@ const Login = ({navigation}) => {
                         let name = res.data.nama;
                         let address = res.data.alamat;
                         let rol_id = res.data.rol_id;
+                        let str = res.data.str;
+                        let isSatgas = res.data.isSatgas;
                     
                         let data = {
                             uname: uname,
                             pass: pass,
                             name: name,
                             address: address,
-                            role: rol_id
+                            role: rol_id,
+                            str: str,
+                            isSatgas: isSatgas
                         }
                         AsyncStorage.setItem('user', JSON.stringify(data));
                         navigation.replace('MainAppKry');
