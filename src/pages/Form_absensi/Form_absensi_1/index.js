@@ -20,10 +20,15 @@ const Form_absensi_1 = () => {
                     <FormPengisian_1_4/>
                     <FormPengisian_1_5/>
                     <FormPengisian_1_6/>
+                    {/* <FormPengisian_2_1/>
+                    <FormPengisian_2_2/>
+                    <FormPengisian_2_3/>
+                    <FormPengisian_2_4/>
+                    <FormPengisian_2_5/> */}
                 </View>
                 <View style={styles.button}>
-                    <ButtonBatal1/>
-                    <ButtonSelanjutnya1/>
+                    {/* <ButtonBatal1/> */}
+                    {/* <ButtonSelanjutnya1/> */}
                 </View>
             </ScrollView>
         </View>

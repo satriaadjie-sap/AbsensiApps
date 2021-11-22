@@ -6,6 +6,7 @@ const ButtonSelanjutnya1 = () => {
     return (        
         <View  style={styles.button}>
             <TouchableOpacity
+                // onPress={handleSubmitPress}
                 onPress={() => Alert.alert("Selanjutnya")}
             >
                 <Text style={styles.textButton}>SELANJUTNYA</Text>
