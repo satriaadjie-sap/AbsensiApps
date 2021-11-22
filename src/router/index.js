@@ -74,7 +74,6 @@ function Header() {
     }
 
     return (        
-=======
 // const Absensi4 = () => {    
 //     return (
 //         <Tab.Navigator tabBar={props => <BottomTabNavigator {...props} />}>
