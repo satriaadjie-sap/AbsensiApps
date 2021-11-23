@@ -14,7 +14,8 @@ const MainApp = () => {
     return (
         <Tab.Navigator tabBar={props => <BottomTabNavigator {...props} />}>
             <Tab.Screen name="Beranda" component={Beranda} />
-            <Tab.Screen name="Form Absensi" component={Riwayat_absensi_mahasiswa} />
+            {/* <Tab.Screen name="Form Absensi" component={Riwayat_absensi_mahasiswa} /> */}
+            <Tab.Screen name="Form Absensi" component={Form_absensi} />
             <Tab.Screen name="Pengumuman" component={Riwayat_pengumuman} />
             <Tab.Screen name="Ubah Sandi" component={Ubah_sandi} />
             {/* <Tab.Screen name="LogOut" component={Logout} /> */}
