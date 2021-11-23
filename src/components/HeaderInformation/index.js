@@ -15,9 +15,9 @@ const HeaderInformation = ({user, role,lastLogin,notification}) => {
             {/* Notifikasi */}
             <View style={styles.notification}>
                 <IconNotifikasi style={styles.notification_icon}/>
-                <AutoScrolling  style={styles.scroll}>
+                {/* <AutoScrolling  style={styles.scroll}>
                     <Text style={styles.notification_text}>{notification}</Text>
-                </AutoScrolling>
+                </AutoScrolling> */}
             </View>
         </View>
     )
