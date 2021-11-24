@@ -11,7 +11,7 @@ const FormPengisian_1_5 = () => {
             {/* Apakah Anda menggunakan kendaraan umum saat ke kampus? */}
             <View style={styles.containerQuestion}>
                 <Text style={styles.textHeader}>
-                Apakah Anda menggunakan kendaraan umum saat ke kampus?                   
+                Apakah Anda menggunakan kendaraan umum? (Ojek Online/Angkot Bus)                   
                 </Text>
                 <View style={styles.comboBox}>
                     <Picker
