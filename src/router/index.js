@@ -3,7 +3,7 @@ import { StyleSheet, Text, View} from 'react-native'
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 // import {Beranda, Beranda_karyawan, Form_absensi, Riwayat_absensi, Form_absensi_Kry, Riwayat_absensi_mahasiswa, Riwayat_pengumuman, Riwayat_pengumuman_karyawan, Ubah_sandi, Login} from '../pages';
-import {Beranda, Beranda_karyawan, Form_absensi, Riwayat_absensi, Form_absensi_Kry, Riwayat_absensi_mahasiswa, Riwayat_pengumuman, Riwayat_pengumuman_karyawan, Ubah_sandi, Login} from '../pages';
+import {Beranda, Beranda_karyawan, Form_absensi, Riwayat_absensi, Form_absensi_Kry, Riwayat_absensi_mahasiswa, Riwayat_pengumuman, Riwayat_pengumuman_karyawan, Riwayat_pengumuman_satgas, Ubah_sandi, Login} from '../pages';
 import { BottomTabNavigator, HeaderApps, HeaderInformation } from '../components';
 import { IconLogoPolman } from '../assets';
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../utils/constants';
