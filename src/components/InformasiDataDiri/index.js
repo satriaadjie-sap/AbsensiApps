@@ -7,39 +7,28 @@ const InformasiDataDiri = ({nim, nama, prodi, tingkat, status, beasiswa, nomor})
         <View style={styles.container}>
             <View style={styles.textContainer}>
                 <Text style={styles.textHeader}>
-                    NIM - NAMA
+                    NPK/Nama Akun
                 </Text>
                 <Text style={styles.textBody}>
-                    0320190027 - SATRIA ADJIE PRAYOGA
+                    214557846
                 </Text>
             </View>
             <View style={styles.textContainer}>
                 <Text style={styles.textHeader}>
-                    Program Studi - Tingkat
+                    Nama
                 </Text>
                 <Text style={styles.textBody}>
-                    MI (MI) - Tingkat 2
+                   Yosep Setiawan
                 </Text>
             </View>
             <View style={styles.textContainer}>
                 <Text style={styles.textHeader}>
-                    Status Mahasiswa
+                    Seksi/Departemen
                 </Text>
                 <Text style={styles.textBody}>
-                    Aktif - Reguler
+                    LPPM
                 </Text>
             </View>
-            <View style={styles.textContainer}>
-                <Text style={styles.textHeader}>
-                    Nomor Handphone
-                </Text>
-                <Text style={styles.textBody}>
-                    089637688078
-                </Text>
-            </View>
-            <Text style={styles.textBody}>
-                Jika ingin menghubungi nomor handphone, silahkan hubungi DAAK
-            </Text>
         </View>
     )
 }

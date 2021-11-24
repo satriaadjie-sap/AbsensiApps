@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { FormPengisian_2_1, HeaderFormAbsesni, FormPengisian_2_2 , FormPengisian_2_3,
-    FormPengisian_2_4, FormPengisian_2_5, FormPengisian_2_6, FormPengisian_2_7, ButtonBatal2, ButtonSelanjutnya2} from '../../../components'
+    FormPengisian_2_4, FormPengisian_2_5, ButtonBatal2, ButtonSelanjutnya2} from '../../../components'
 
 import { WARNA_SEKUNDER } from '../../../utils/constants'
 
@@ -14,7 +14,6 @@ const Form_absensi_2 = () => {
                 <FormPengisian_2_2/>
                 <FormPengisian_2_3/>
                 <FormPengisian_2_4/>
-                <FormPengisian_2_6/>
                 <FormPengisian_2_5/>
             </View>
             <View style={styles.button}>
