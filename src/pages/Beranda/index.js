@@ -4,7 +4,7 @@ import { ButtonIsiFormulir, HeaderApps, HeaderInformation, InformasiPengisian, N
 import { WARNA_BG_FORM, WARNA_MERAH, WARNA_PUTIH, WARNA_SEKUNDER } from '../../utils/constants'
 
 const Beranda = ({hasAbsen=false, navigation}) => {
-
+const data = " Mahasiswa ";
     return (
         <View style={ styles.page }>            
             <ScrollView  style={styles.containerScroll}>
@@ -16,10 +16,10 @@ const Beranda = ({hasAbsen=false, navigation}) => {
                         Apabila dirasa ada yang perlu disampaikan secara khusus dan urgent silahkan menghubungi langsung tim DKAK ataupun tim kendali COVID-19 Polman Astra (Ka. Dept DKAK atau Ka. Dept DPUSDM).{"\n\n"}
                         Diharapkan semua mahasiswa Polman Astra dapat mengisi dengan benar data kesehatan harian dan absensi ini dan menjadi bagian dari absen harian seperti saat perkuliahan dalam keadaaan normal.
                     </Text>
-                    <InformasiPengisian/> 
+                    <InformasiPengisian data={data} /> 
                     {/* NOTIFIKASI PENGISIAN AKAN AKTIF JIKA SUDAH MENGISI FORMULIR*/}
                     {/* BUTTON ISI FORMULIR AKAN AKTTIF JIKA BELUM MENGISI FORMULIR */}
-                    {hasAbsen == true ? <NotifPengisian/>  : <ButtonIsiFormulir navigation = {navigation}/>}
+                    {hasAbsen == true ? <NotifPengisian data={data}/>  : <ButtonIsiFormulir navigation = {navigation}/>}
 
                     <Text style={styles.textKesulitan}>
                         Jika terdapat kesulitan tentang cara penggunaan aplikasi ini, silahkan menghubungi MIS / Bang Candra.
