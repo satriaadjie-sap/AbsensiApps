@@ -1,8 +1,9 @@
-import React from 'react'
-import { StyleSheet, Text, View} from 'react-native'
+import React, { Component, useState, createRef, useEffect } from 'react'
+import { StyleSheet, Text,  AsyncStorage,View} from 'react-native'
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import {Beranda, Beranda_karyawan, Beranda_satgas, Form_absensi, Riwayat_absensi, Riwayat_absensi_mahasiswa, Riwayat_pengumuman, Riwayat_pengumuman_karyawan, Testing, Ubah_sandi, Login} from '../pages';
+// import {Beranda, Beranda_karyawan, Form_absensi, Riwayat_absensi, Form_absensi_Kry, Riwayat_absensi_mahasiswa, Riwayat_pengumuman, Riwayat_pengumuman_karyawan, Ubah_sandi, Login} from '../pages';
+import {Beranda, Beranda_karyawan, Beranda_satgas, Form_absensi, Riwayat_absensi, Form_absensi_Kry, Riwayat_absensi_mahasiswa, Riwayat_pengumuman, Riwayat_pengumuman_karyawan, Riwayat_pengumuman_satgas, Ubah_sandi, Login} from '../pages';
 import { BottomTabNavigator, HeaderApps, HeaderInformation } from '../components';
 import { IconLogoPolman } from '../assets';
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../utils/constants';
@@ -15,6 +16,7 @@ const MainApp = () => {
         <Tab.Navigator tabBar={props => <BottomTabNavigator {...props} />}>
             <Tab.Screen name="Beranda" component={Beranda} />
             <Tab.Screen name="Form Absensi" component={Riwayat_absensi_mahasiswa} />
+            {/* <Tab.Screen name="Form Absensi" component={Form_absensi} /> */}
             <Tab.Screen name="Pengumuman" component={Riwayat_pengumuman} />
             <Tab.Screen name="Ubah Sandi" component={Ubah_sandi} />
             {/* <Tab.Screen name="LogOut" component={Logout} /> */}
@@ -28,6 +30,7 @@ const MainAppKry = () => {
         <Tab.Navigator tabBar={props => <BottomTabNavigator {...props} />}>
             <Tab.Screen name="Beranda" component={Beranda_karyawan} />
             <Tab.Screen name="Form Absensi" component={Riwayat_absensi} />
+            {/* <Tab.Screen name="Form Absensi" component={Form_absensi_Kry} /> */}
             <Tab.Screen name="Pengumuman" component={Riwayat_pengumuman_karyawan} />
             <Tab.Screen name="Ubah Sandi" component={Ubah_sandi} />
             {/* <Tab.Screen name="LogOut" component={Logout} /> */}
@@ -62,19 +65,22 @@ const MainAppSatgas = () => {
 //     )
 // }
 
-function Header() {
-    return (
-        <View style={styles.containerHeader}>            
-            <HeaderApps/>
-            <HeaderInformation 
-                    user="SATRIA ADJIE PRAYOGA"
-                    role="MAHASISWA"
-                    lastLogin="Login terakhir: 7 Mei 2021, 14:06 WIB"
-                    notification="Anda sudah mengisi formulir absensi dan pendataan kesehatan mahasiswa. Terima kasih. "
-                    />            
-        </View>   
-    );
-  }
+// function Header() {
+//     return (
+// >>>>>>> main
+//         <View style={styles.containerHeader}>            
+//             <HeaderApps/>
+//             <HeaderInformation 
+//                     user={user}
+//                     role={role}
+//                     // user='a'
+//                     // role='b'
+//                     //lastLogin="Login terakhir: 7 Mei 2021, 14:06 WIB"
+//                     notification="Anda sudah mengisi formulir absensi dan pendataan kesehatan mahasiswa. Terima kasih. "
+//                     />            
+//         </View>   
+//     );
+//   }
 
 const Router = () => {
     return (

@@ -1,7 +1,8 @@
 import React from 'react'
 import { ScrollView, StyleSheet, Text, View } from 'react-native'
-import { ButtonBatal1, ButtonSelanjutnya1, FormPengisian_1_1, FormPengisian_1_2, FormPengisian_1_3, FormPengisian_1_4,
-    FormPengisian_1_5,FormPengisian_1_6, HeaderFormAbsesni, InformasiDataDiri }
+import { FormPengisian_1_2, FormPengisian_1_3,FormPengisian_1_4,
+    FormPengisian_1_5, FormPengisian_1_6, FormPengisian_2_1, FormPengisian_2_2, FormPengisian_2_3,
+    FormPengisian_2_4, FormPengisian_2_5, FormPengisian_2_6, HeaderFormAbsesni, InformasiDataDiri, ButtonSelanjutnya1 }
     from '../../../components'
 
 
@@ -14,24 +15,25 @@ const Form_absensi_1 = () => {
                 <View style={styles.containerForm}>            
                     <HeaderFormAbsesni text={"Langkah 1 / 5 : Mengisi Data Diri dan Keluarga"}/>
                     <InformasiDataDiri/>
-                    <FormPengisian_1_1/>
                     <FormPengisian_1_2/>
-                    <FormPengisian_1_3/>
-                    <FormPengisian_1_4/>
-                    <FormPengisian_1_5/>
-                    <FormPengisian_1_6/>
-                    {/* <FormPengisian_2_1/>
+                    {/* <FormPengisian_1_3/> */}
+                    {/* <FormPengisian_1_4/> */}
+                    <FormPengisian_2_1/>
                     <FormPengisian_2_2/>
                     <FormPengisian_2_3/>
                     <FormPengisian_2_4/>
-                    <FormPengisian_2_5/> */}
+                    <FormPengisian_1_5/>
+                    <FormPengisian_1_6/>
+                    <FormPengisian_2_6/>
+                    <FormPengisian_2_5/>
                 </View>
                 <View style={styles.button}>
                     {/* <ButtonBatal1/> */}
-                    {/* <ButtonSelanjutnya1/> */}
+                    <ButtonSelanjutnya1/>
                 </View>
             </ScrollView>
         </View>
+        
     )
 }
 

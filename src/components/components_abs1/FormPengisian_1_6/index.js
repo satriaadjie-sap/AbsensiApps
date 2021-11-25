@@ -11,7 +11,7 @@ const FormPengisian_1_6 = () => {
             {/* Apakah dalam 7 hari terakhir Anda pernah mengunjungi rumah sakit atau fasilitas kesehatan lainnya? (misal: klinik/puskesmas) */}
             <View style={styles.containerQuestion}>
                 <Text style={styles.textHeader}>
-                Apakah dalam 7 hari terakhir Anda pernah mengunjungi rumah sakit atau fasilitas kesehatan lainnya? (misal: klinik/puskesmas)                   
+                Apakah dalam 7 hari terakhir Anda mengunjungi rumah sakit?
                 </Text>
                 <View style={styles.comboBox}>
                     <Picker
