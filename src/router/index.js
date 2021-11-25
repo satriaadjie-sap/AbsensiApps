@@ -54,22 +54,30 @@ function Header() {
     const [role, setRole] = useState('');
 
         AsyncStorage.getItem('user', (error, result) => {
-        if(result){
-            //Parse result ke JSON
-            let resultParsed = JSON.parse(result)
-            // user.push(resultParsed.name);
-            // role.push(resultParsed.role);
-            setUser(resultParsed.name);
-            setRole(resultParsed.role);
+            if(result){
+                //Parse result ke JSON
+                let resultParsed = JSON.parse(result)
+                // user.push(resultParsed.name);
+                // role.push(resultParsed.role);
+                setUser(resultParsed.name);
+
+                if (resultParsed.role === "ROL23"){
+                    setRole("MAHASISWA");
+                } else if (resultParsed.role !== "ROL23" && resultParsed.isSatgas === "1"){
+                    setRole("SATGAS-COVID19");
+                } else {
+                    setRole("KARYAWAN");
+                }
+            
             }
         });
 
-//     if (role == "ROL23"){
-//         setRole("MAHASISWA")
-//     }
-//     else if (role == "ROL01"){
-//         setRole("KARYAWAN")
-//     }
+    // if (role == "ROL23"){
+    //     setRole("MAHASISWA")
+    // }
+    // else if (role == "ROL01"){
+    //     setRole("KARYAWAN")
+    // }
 
             // return (   
             // const Absensi4 = () => {    
