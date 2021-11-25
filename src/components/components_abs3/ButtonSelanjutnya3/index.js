@@ -84,8 +84,8 @@ const ButtonSelanjutnya3 = ({navigation}) => {
     return (
         <View  style={styles.button}>
             <TouchableOpacity
-                // onPress={handleSubmitPress}
-                onPress={() => navigation.replace('Absensi4')}
+                onPress={handleSubmitPress}
+                // onPress={() => navigation.replace('Absensi4')}
                 // onPress={() => Alert.alert("Selanjutnya")}
             >
                 <Text style={styles.textButton}>SELANJUTNYA</Text>

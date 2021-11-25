@@ -3,6 +3,7 @@ import {Picker} from '@react-native-picker/picker'
 import {StyleSheet, Text, TextInput, View } from 'react-native'
 import { WARNA_BG_FORM, WARNA_HITAM, WARNA_MERAH, WARNA_PUTIH, WARNA_SEKUNDER } from '../../../utils/constants'
 import ButtonSalin from '../ButtonSalin'
+import InformasiTinggalBersama from '../InformasiTinggalBersama'
 
 
 class FormPengisian_1_2 extends Component {
@@ -83,13 +84,35 @@ class FormPengisian_1_2 extends Component {
         });     
         return (
             <View style={styles.container}>
+            
+                {/* Pilihan Anda */}
+                <View style={styles.containerQuestion}>
+                    <Text style={styles.textHeader}>
+                    Jenis Kelamin
+                        <Text style={styles.Mandatory}> *</Text>
+                    </Text>
+                    <View style={styles.comboBox}>
+                        <Picker
+                            selectedValue={this.state.selectedValue}
+                            mode="dropdown"
+                            backgroundColor={WARNA_PUTIH}
+                            fontSize="13"                            
+                        >
+                            <Picker.Item label="-- Pilih --" value="-" />
+                            <Picker.Item label="Perempuan" value="0" />
+                            <Picker.Item label="Laki-laki" value="1" />
+                        </Picker>
+                    </View>
+                </View>
+
                 {/* Informasi pengisian */}
                 <View style={styles.containerQuestion}>
                     <Text style={styles.textHeader}>
                     Di mana posisi anda saat ini?
                         <Text style={styles.Mandatory}> *</Text>
                     </Text>
-                    <ButtonSalin/>
+                    <InformasiTinggalBersama/>
+                    {/* <ButtonSalin/> */}
                 </View>
     
                 {/* Pilihan Anda */}

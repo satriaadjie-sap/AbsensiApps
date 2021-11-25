@@ -28,6 +28,8 @@ import { FormPengisian_2_1,
     FormPengisian_2_3,
     FormPengisian_2_4,
     FormPengisian_2_5,
+    FormPengisian_2_6,
+    FormPengisian_2_7,
     ButtonBatal2,ButtonSelanjutnya2 } from './components_abs2'
 import {FormPengisian_3_1,  ButtonBatal3, ButtonSelanjutnya3} from './components_abs3'
 import {FormPengisian_4_1, ButtonBatal4, ButtonSelanjutnya4,
@@ -43,7 +45,8 @@ export {TablePengisian, TablePengisianMahasiswa, BottomTabNavigator, HeaderInfor
     HeaderFormAbsesni, InformasiDataDiri, FormPengisian_1_1, InformasiTinggalBersama,
     FormPengisian_1_2, ButtonSalin, FormPengisian_1_3, FormPengisian_1_4, FormPengisian_1_5,
     FormPengisian_1_6, ButtonBatal1, ButtonSelanjutnya1, FormPengisian_2_1, FormPengisian_2_2,
-    FormPengisian_2_3, FormPengisian_2_4, FormPengisian_2_5, ButtonBatal2, ButtonSelanjutnya2,
+    FormPengisian_2_3, FormPengisian_2_4, FormPengisian_2_5, FormPengisian_2_6,
+    FormPengisian_2_7,ButtonBatal2, ButtonSelanjutnya2,
     FormPengisian_3_1, ButtonBatal3, ButtonSelanjutnya3, FormPengisian_4_1, ButtonBatal4,
     ButtonSelanjutnya4, RowPertanyaan, FormPengisian_5_1, ButtonSelesai, ButtonUnduhFormulir,
     InformationPenting, ButtonKembali, Form_1, Form_2, Form_3, Form_4, TemplateInfo, CheckboxPenyakit,

@@ -2,7 +2,7 @@ import React, { Component, useState, createRef, useEffect } from 'react'
 import { StyleSheet, Text,  AsyncStorage,View} from 'react-native'
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Beranda, Beranda_karyawan, Beranda_satgas, Form_absensi, Riwayat_absensi, 
+import {Beranda, Beranda_karyawan, Beranda_satgas, Form_absensi, Riwayat_absensi, Form_absensi_Kry, 
     Riwayat_absensi_mahasiswa, Riwayat_pengumuman, Riwayat_pengumuman_karyawan, 
     Riwayat_pengumuman_satgas, Laporan_satgas, Testing, Ubah_sandi, Login} from '../pages';
 import { BottomTabNavigator, HeaderApps, HeaderInformation } from '../components';
@@ -17,6 +17,7 @@ const MainApp = () => {
         <Tab.Navigator tabBar={props => <BottomTabNavigator {...props} />}>
             <Tab.Screen name="Beranda" component={Beranda} />
             <Tab.Screen name="Form Absensi" component={Riwayat_absensi_mahasiswa} />
+            {/* <Tab.Screen name="Form Absensi" component={Form_absensi} /> */}
             <Tab.Screen name="Pengumuman" component={Riwayat_pengumuman} />
             <Tab.Screen name="Ubah Sandi" component={Ubah_sandi} />
             {/* <Tab.Screen name="LogOut" component={Logout} /> */}
@@ -30,6 +31,7 @@ const MainAppKry = () => {
         <Tab.Navigator tabBar={props => <BottomTabNavigator {...props} />}>
             <Tab.Screen name="Beranda" component={Beranda_karyawan} />
             <Tab.Screen name="Form Absensi" component={Riwayat_absensi} />
+            {/* <Tab.Screen name="Form Absensi" component={Form_absensi_Kry} /> */}
             <Tab.Screen name="Pengumuman" component={Riwayat_pengumuman_karyawan} />
             <Tab.Screen name="Ubah Sandi" component={Ubah_sandi} />
         </Tab.Navigator>        
@@ -62,27 +64,42 @@ function Header() {
             }
         });
 
-    // if (role == "ROL23"){
-    //     setRole("MAHASISWA")
-    // }
-    // else if (role == "ROL01"){
-    //     setRole("KARYAWAN")
-    // }
+//     if (role == "ROL23"){
+//         setRole("MAHASISWA")
+//     }
+//     else if (role == "ROL01"){
+//         setRole("KARYAWAN")
+//     }
 
-    return (        
-// const Absensi4 = () => {    
-//     return (
-//         <Tab.Navigator tabBar={props => <BottomTabNavigator {...props} />}>
-//             <Tab.Screen name="Beranda" component={Beranda} />
-//             <Tab.Screen name="Form Absensi" component={Form_absensi_4} />
-//             <Tab.Screen name="Pengumuman" component={Riwayat_pengumuman} />
-//             <Tab.Screen name="Ubah Sandi" component={Ubah_sandi} />
-//             {/* <Tab.Screen name="LogOut" component={Logout} /> */}
-//             {/* <Tab.Screen name="Login" component={Login} /> */}
-//         </Tab.Navigator>        
-//     )
-// }
+            // return (   
+            // const Absensi4 = () => {    
+            //     return (
+            //         <Tab.Navigator tabBar={props => <BottomTabNavigator {...props} />}>
+            //             <Tab.Screen name="Beranda" component={Beranda} />
+            //             <Tab.Screen name="Form Absensi" component={Form_absensi_4} />
+            //             <Tab.Screen name="Pengumuman" component={Riwayat_pengumuman} />
+            //             <Tab.Screen name="Ubah Sandi" component={Ubah_sandi} />
+            //             {/* <Tab.Screen name="LogOut" component={Logout} /> */}
+            //             {/* <Tab.Screen name="Login" component={Login} /> */}
+            //         </Tab.Navigator>        
+            //     )
+            // }
 
+            //   function Header() {
+            //     return (
+            //         <View style={styles.containerHeader}>            
+            //             <HeaderApps/>
+            //             <HeaderInformation 
+            //                     user="SATRIA ADJIE PRAYOGA"
+            //                     role="MAHASISWA"
+            //                     lastLogin="Login terakhir: 7 Mei 2021, 14:06 WIB"
+            //                     notification="Anda sudah mengisi formulir absensi dan pendataan kesehatan mahasiswa. Terima kasih. "
+            //                     />            
+            //         </View>   
+            //     );
+            //   }
+
+    return (
         <View style={styles.containerHeader}>            
             <HeaderApps/>
             <HeaderInformation 
@@ -91,7 +108,8 @@ function Header() {
                     // user="{user}"
                     // role="{role}"
                     //lastLogin="Login terakhir: 7 Mei 2021, 14:06 WIB"
-                    //notification="Anda sudah mengisi formulir absensi dan pendataan kesehatan. Terima kasih. "
+                    //notification="Anda sudah mengisi formulir absensi dan pendataan kesehatan mahasiswa. Terima kasih. "
+
                     />            
         </View>   
     );
