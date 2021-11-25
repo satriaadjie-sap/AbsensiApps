@@ -67,7 +67,6 @@ const MainAppSatgas = () => {
 
 // function Header() {
 //     return (
-// >>>>>>> main
 //         <View style={styles.containerHeader}>            
 //             <HeaderApps/>
 //             <HeaderInformation 
@@ -81,6 +80,20 @@ const MainAppSatgas = () => {
 //         </View>   
 //     );
 //   }
+
+function Header() {
+    return (
+        <View style={styles.containerHeader}>            
+            <HeaderApps/>
+            <HeaderInformation 
+                    user="SATRIA ADJIE PRAYOGA"
+                    role="MAHASISWA"
+                    lastLogin="Login terakhir: 7 Mei 2021, 14:06 WIB"
+                    notification="Anda sudah mengisi formulir absensi dan pendataan kesehatan mahasiswa. Terima kasih. "
+                    />            
+        </View>   
+    );
+  }
 
 const Router = () => {
     return (

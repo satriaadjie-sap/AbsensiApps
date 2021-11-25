@@ -52,7 +52,7 @@ const Login = ({navigation}) => {
             .get(`${LINK_API}Login/LoginUser?username=${username}&&password=${password}`)
             .then(async (res) => {
                 if(res.data.result === "TRUE") {
-                    // untuk mahasiswa
+                    // untuk role mahasiswa
                     if(res.data.rol_id === "ROL23"){
                         let uname = res.data.username;
                         let pass = res.data.password;
@@ -72,7 +72,7 @@ const Login = ({navigation}) => {
                         navigation.replace('MainApp');
 
                     } else if (res.data.rol_id != "ROL23" && res.data.isSatgas === "1"){
-                        // untuk karyawan + satgas
+                        // untuk role karyawan + satgas
                             let uname = res.data.username;
                             let pass = res.data.password;
                             let name = res.data.nama;
@@ -94,7 +94,7 @@ const Login = ({navigation}) => {
                             navigation.replace('MainAppSatgas');
 
                         } else {
-                            // untuk karyawan
+                            // untuk role karyawan
                             let uname = res.data.username;
                             let pass = res.data.password;
                             let name = res.data.nama;
