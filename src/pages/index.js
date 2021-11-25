@@ -16,4 +16,3 @@ export {Beranda, Beranda_karyawan, Beranda_satgas, Form_absensi, Form_absensi_Kr
     Riwayat_absensi, Riwayat_pengumuman, Riwayat_pengumuman_karyawan, Riwayat_pengumuman_satgas, 
     Ubah_sandi, Testing, Login}
 
-

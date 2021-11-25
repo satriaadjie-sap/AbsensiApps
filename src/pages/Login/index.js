@@ -52,7 +52,7 @@ const Login = ({navigation}) => {
             .get(`${LINK_API}Login/LoginUser?username=${username}&&password=${password}`)
             .then(async (res) => {
                 if(res.data.result === "TRUE") {
-                    // untuk mahasiswa
+                    // untuk role mahasiswa
                     if(res.data.rol_id === "ROL23"){
                         let uname = res.data.username;
                         let pass = res.data.password;
