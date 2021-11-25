@@ -55,21 +55,21 @@ const MainAppSatgas = () => {
 
 
 
-// function Header() {
+function Header() {
     
-//     const [user, setUser] = useState('');
-//     const [role, setRole] = useState('');
+    const [user, setUser] = useState('');
+    const [role, setRole] = useState('');
 
-//         AsyncStorage.getItem('user', (error, result) => {
-//         if(result){
-//             //Parse result ke JSON
-//             let resultParsed = JSON.parse(result)
-//             // user.push(resultParsed.name);
-//             // role.push(resultParsed.role);
-//             setUser(resultParsed.name);
-//             setRole(resultParsed.role);
-//             }
-//         });
+        AsyncStorage.getItem('user', (error, result) => {
+        if(result){
+            //Parse result ke JSON
+            let resultParsed = JSON.parse(result)
+            // user.push(resultParsed.name);
+            // role.push(resultParsed.role);
+            setUser(resultParsed.name);
+            setRole(resultParsed.role);
+            }
+        });
 
 //     if (role == "ROL23"){
 //         setRole("MAHASISWA")
@@ -78,66 +78,48 @@ const MainAppSatgas = () => {
 //         setRole("KARYAWAN")
 //     }
 
-// return (   
-// const Absensi4 = () => {    
-//     return (
-//         <Tab.Navigator tabBar={props => <BottomTabNavigator {...props} />}>
-//             <Tab.Screen name="Beranda" component={Beranda} />
-//             <Tab.Screen name="Form Absensi" component={Form_absensi_4} />
-//             <Tab.Screen name="Pengumuman" component={Riwayat_pengumuman} />
-//             <Tab.Screen name="Ubah Sandi" component={Ubah_sandi} />
-//             {/* <Tab.Screen name="LogOut" component={Logout} /> */}
-//             {/* <Tab.Screen name="Login" component={Login} /> */}
-//         </Tab.Navigator>        
-//     )
-// }
+            // return (   
+            // const Absensi4 = () => {    
+            //     return (
+            //         <Tab.Navigator tabBar={props => <BottomTabNavigator {...props} />}>
+            //             <Tab.Screen name="Beranda" component={Beranda} />
+            //             <Tab.Screen name="Form Absensi" component={Form_absensi_4} />
+            //             <Tab.Screen name="Pengumuman" component={Riwayat_pengumuman} />
+            //             <Tab.Screen name="Ubah Sandi" component={Ubah_sandi} />
+            //             {/* <Tab.Screen name="LogOut" component={Logout} /> */}
+            //             {/* <Tab.Screen name="Login" component={Login} /> */}
+            //         </Tab.Navigator>        
+            //     )
+            // }
 
+            //   function Header() {
+            //     return (
+            //         <View style={styles.containerHeader}>            
+            //             <HeaderApps/>
+            //             <HeaderInformation 
+            //                     user="SATRIA ADJIE PRAYOGA"
+            //                     role="MAHASISWA"
+            //                     lastLogin="Login terakhir: 7 Mei 2021, 14:06 WIB"
+            //                     notification="Anda sudah mengisi formulir absensi dan pendataan kesehatan mahasiswa. Terima kasih. "
+            //                     />            
+            //         </View>   
+            //     );
+            //   }
 
-// function Header() {
-//     return (
-//         <View style={styles.containerHeader}>            
-//             <HeaderApps/>
-//             <HeaderInformation 
-//                     user={user}
-//                     role={role}
-//                     // user='a'
-//                     // role='b'
-//                     //lastLogin="Login terakhir: 7 Mei 2021, 14:06 WIB"
-//                     notification="Anda sudah mengisi formulir absensi dan pendataan kesehatan mahasiswa. Terima kasih. "
-//                     />            
-//         </View>   
-//     );
-//   }
-
-  function Header() {
     return (
         <View style={styles.containerHeader}>            
             <HeaderApps/>
             <HeaderInformation 
-                    user="SATRIA ADJIE PRAYOGA"
-                    role="MAHASISWA"
-                    lastLogin="Login terakhir: 7 Mei 2021, 14:06 WIB"
-                    notification="Anda sudah mengisi formulir absensi dan pendataan kesehatan mahasiswa. Terima kasih. "
+                    user={user}
+                    role={role}
+                    // user='a'
+                    // role='b'
+                    //lastLogin="Login terakhir: 7 Mei 2021, 14:06 WIB"
+                    //notification="Anda sudah mengisi formulir absensi dan pendataan kesehatan mahasiswa. Terima kasih. "
                     />            
         </View>   
     );
   }
-
-// function Header() {
-//     return (
-//         <View style={styles.containerHeader}>            
-//             <HeaderApps/>
-//             <HeaderInformation 
-//                     user={user}
-//                     role={role}
-//                     // user='a'
-//                     // role='b'
-//                     //lastLogin="Login terakhir: 7 Mei 2021, 14:06 WIB"
-//                     notification="Anda sudah mengisi formulir absensi dan pendataan kesehatan mahasiswa. Terima kasih. "
-//                     />            
-//         </View>   
-//     );
-//   }
 
 const Router = () => {
     return (
