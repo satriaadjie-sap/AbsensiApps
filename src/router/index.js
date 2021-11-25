@@ -109,9 +109,6 @@ const MainAppSatgas = () => {
 //     );
 //   }
 
-function Header() {
-    return (
-
   function Header() {
     return (
         <View style={styles.containerHeader}>            

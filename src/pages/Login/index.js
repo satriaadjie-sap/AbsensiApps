@@ -114,9 +114,6 @@ const Login = ({navigation}) => {
                             }
                             AsyncStorage.setItem('user', JSON.stringify(data));
                             navigation.replace('MainAppKry');
-
-                        
-                        
                     }
                 }
                 else
