@@ -26,8 +26,11 @@ const Login = ({navigation}) => {
             let resultParsed = JSON.parse(result)
             if (resultParsed.role === "ROL23") {
                 navigation.replace('MainApp');
+            } else if (resultParsed.role != "ROL23" && resultParsed.isSatgas === "1"){
+                    navigation.replace('MainAppSatgas');
             } else {
                 navigation.replace('MainAppKry');
+               
             }
         }
     }); 
@@ -48,8 +51,8 @@ const Login = ({navigation}) => {
         axios
             .get(`${LINK_API}Login/LoginUser?username=${username}&&password=${password}`)
             .then(async (res) => {
-                // if(res.data.result === "TRUE" && res.data.rol_id === "ROL23") {
                 if(res.data.result === "TRUE") {
+                    // untuk mahasiswa
                     if(res.data.rol_id === "ROL23"){
                         let uname = res.data.username;
                         let pass = res.data.password;
@@ -67,26 +70,53 @@ const Login = ({navigation}) => {
                         }
                         AsyncStorage.setItem('user', JSON.stringify(data));
                         navigation.replace('MainApp');
-                    } else {
-                        let uname = res.data.username;
-                        let pass = res.data.password;
-                        let name = res.data.nama;
-                        let address = res.data.alamat;
-                        let rol_id = res.data.rol_id;
-                        let str = res.data.str;
-                        let isSatgas = res.data.isSatgas;
-                    
-                        let data = {
-                            uname: uname,
-                            pass: pass,
-                            name: name,
-                            address: address,
-                            role: rol_id,
-                            str: str,
-                            isSatgas: isSatgas
-                        }
-                        AsyncStorage.setItem('user', JSON.stringify(data));
-                        navigation.replace('MainAppKry');
+
+                    } else if (res.data.rol_id != "ROL23" && res.data.isSatgas === "1"){
+                        // untuk karyawan + satgas
+                            let uname = res.data.username;
+                            let pass = res.data.password;
+                            let name = res.data.nama;
+                            let address = res.data.alamat;
+                            let rol_id = res.data.rol_id;
+                            let str = res.data.str;
+                            let isSatgas = res.data.isSatgas;
+                        
+                            let data = {
+                                uname: uname,
+                                pass: pass,
+                                name: name,
+                                address: address,
+                                role: rol_id,
+                                str: str,
+                                isSatgas: isSatgas
+                            }
+                            AsyncStorage.setItem('user', JSON.stringify(data));
+                            navigation.replace('MainAppSatgas');
+
+                        } else {
+                            // untuk karyawan
+                            let uname = res.data.username;
+                            let pass = res.data.password;
+                            let name = res.data.nama;
+                            let address = res.data.alamat;
+                            let rol_id = res.data.rol_id;
+                            let str = res.data.str;
+                            let isSatgas = res.data.isSatgas;
+                        
+                            let data = {
+                                uname: uname,
+                                pass: pass,
+                                name: name,
+                                address: address,
+                                role: rol_id,
+                                str: str,
+                                isSatgas: isSatgas
+                            }
+                            AsyncStorage.setItem('user', JSON.stringify(data));
+                            navigation.replace('MainAppKry');
+
+                        
+                        
                     }
                 }
                 else
