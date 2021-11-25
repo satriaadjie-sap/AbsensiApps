@@ -2,7 +2,9 @@ import React, { Component, useState, createRef, useEffect } from 'react'
 import { StyleSheet, Text,  AsyncStorage,View} from 'react-native'
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import {Beranda, Beranda_karyawan, Form_absensi, Riwayat_absensi, Riwayat_absensi_mahasiswa, Riwayat_pengumuman, Riwayat_pengumuman_karyawan, Riwayat_pengumuman_satgas,Testing, Ubah_sandi, Login} from '../pages';
+import { Beranda, Beranda_karyawan, Beranda_satgas, Form_absensi, Riwayat_absensi, 
+    Riwayat_absensi_mahasiswa, Riwayat_pengumuman, Riwayat_pengumuman_karyawan, 
+    Riwayat_pengumuman_satgas, Laporan_satgas, Testing, Ubah_sandi, Login} from '../pages';
 import { BottomTabNavigator, HeaderApps, HeaderInformation } from '../components';
 import { IconLogoPolman } from '../assets';
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../utils/constants';
@@ -30,8 +32,6 @@ const MainAppKry = () => {
             <Tab.Screen name="Form Absensi" component={Riwayat_absensi} />
             <Tab.Screen name="Pengumuman" component={Riwayat_pengumuman_karyawan} />
             <Tab.Screen name="Ubah Sandi" component={Ubah_sandi} />
-            {/* <Tab.Screen name="LogOut" component={Logout} /> */}
-            {/* <Tab.Screen name="Login" component={Login} /> */}
         </Tab.Navigator>        
     )
 }
@@ -40,17 +40,13 @@ const MainAppSatgas = () => {
     return (
         <Tab.Navigator tabBar={props => <BottomTabNavigator {...props} />}>
             {/* <Tab.Screen name="Beranda" component={Beranda_satgas} /> */}
-            <Tab.Screen name="Laporan Absensi" component={Laporan_absensi} />
+            <Tab.Screen name="Laporan Absensi" component={Laporan_satgas} />
             <Tab.Screen name="Pengumuman" component={Riwayat_pengumuman_satgas} />
-            {/* <Tab.Screen name="Ubah Sandi" component={Ubah_sandi} /> */}
-            {/* <Tab.Screen name="LogOut" component={Logout} /> */}
-            {/* <Tab.Screen name="Login" component={Login} /> */}
         </Tab.Navigator>
     )
 }
 
 function Header() {
-
     
     const [user, setUser] = useState('');
     const [role, setRole] = useState('');
@@ -66,12 +62,12 @@ function Header() {
             }
         });
 
-    if (role == "ROL23"){
-        setRole("MAHASISWA")
-    }
-    else if (role == "ROL01"){
-        setRole("KARYAWAN")
-    }
+    // if (role == "ROL23"){
+    //     setRole("MAHASISWA")
+    // }
+    // else if (role == "ROL01"){
+    //     setRole("KARYAWAN")
+    // }
 
     return (        
 // const Absensi4 = () => {    
@@ -87,18 +83,15 @@ function Header() {
 //     )
 // }
 
-// function Header() {
-//     return (
-// >>>>>>> main
         <View style={styles.containerHeader}>            
             <HeaderApps/>
             <HeaderInformation 
                     user={user}
                     role={role}
-                    // user='a'
-                    // role='b'
+                    // user="{user}"
+                    // role="{role}"
                     //lastLogin="Login terakhir: 7 Mei 2021, 14:06 WIB"
-                    notification="Anda sudah mengisi formulir absensi dan pendataan kesehatan mahasiswa. Terima kasih. "
+                    //notification="Anda sudah mengisi formulir absensi dan pendataan kesehatan. Terima kasih. "
                     />            
         </View>   
     );
@@ -128,6 +121,13 @@ const Router = () => {
                     { headerTitle: props => <Header {... props}/>,headerStyle:{height:160}}
                 }
             />
+            <Stack.Screen
+                name="MainAppSatgas" 
+                component={MainAppSatgas}
+                options={
+                    { headerTitle: props => <Header {... props}/>,headerStyle:{height:160}}
+                }
+            />
             {/* <Stack.Screen 
                 name="Absensi4" 
                 component={Absensi4}
@@ -143,7 +143,7 @@ export default Router
 
 const styles = StyleSheet.create({
     containerHeader:{       
-        
+
     },
     
 })

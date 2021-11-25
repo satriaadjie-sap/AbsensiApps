@@ -24,11 +24,11 @@ const Login = ({navigation}) => {
         if(result){
             //Parse result ke JSON
             let resultParsed = JSON.parse(result)
-            if (resultParsed.role === "ROL23") {
-                navigation.replace('MainApp');
-            } else {
-                navigation.replace('MainAppKry');
-            }
+            // if (resultParsed.role === "ROL23") {
+            //     navigation.replace('MainApp');
+            // } else {
+            //     navigation.replace('MainAppKry');
+            // }
         }
     }); 
 
@@ -86,7 +86,7 @@ const Login = ({navigation}) => {
                             isSatgas: isSatgas
                         }
                         AsyncStorage.setItem('user', JSON.stringify(data));
-                        navigation.replace('MainAppKry');
+                        navigation.replace('MainAppSatgas');
                     }
                 }
                 else
