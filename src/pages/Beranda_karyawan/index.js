@@ -7,27 +7,51 @@ let rolget = '';
 
 const Beranda_karyawan = ({hasAbsen=false, navigation}) => {
 
-//const [rolen, setRolen] = useState('');
-const data = " Karyawan ";
+// <<<<<<< Riwayat-Absensi
+// // const [rolen, setRolen] = useState('');
+// // const data = "Hello Everyone";
 
-    // AsyncStorage.getItem('user', (error, result) => {
-    //     if(result){
-    //         //Parse result ke JSON
-    //         let resultParsed = JSON.parse(result)
-    //         rolget = resultParsed.role;
-    //     }
-    // });
+// //     AsyncStorage.getItem('user', (error, result) => {
+// //         if(result){
+// //             //Parse result ke JSON
+// //             let resultParsed = JSON.parse(result)
+// //             rolget = resultParsed.role;
+// //         }
+// //     });
 
-    // //const myFunction = () => {
-    //     if (rolget == "ROL23"){
-    //         setRolen('Mahasiswa');
-    //         //rolen => setRolen(rolen)        
-    //     }
-    //     else if (rolget== "ROL01"){
-    //         setRolen('Karyawan');
-    //         //rolen => setRolen(rolen) 
-    //     }
-    // //}
+//     //const myFunction = () => {
+//         // if (rolget == "ROL23"){
+//         //     setRolen('Mahasiswa');
+//         //     //rolen => setRolen(rolen)        
+//         // }
+//         // else if (rolget== "ROL01"){
+//         //     setRolen('Karyawan');
+//         //     //rolen => setRolen(rolen) 
+//         // }
+//     //}
+// =======
+// //const [rolen, setRolen] = useState('');
+// const data = " Karyawan ";
+
+//     // AsyncStorage.getItem('user', (error, result) => {
+//     //     if(result){
+//     //         //Parse result ke JSON
+//     //         let resultParsed = JSON.parse(result)
+//     //         rolget = resultParsed.role;
+//     //     }
+//     // });
+
+//     // //const myFunction = () => {
+//     //     if (rolget == "ROL23"){
+//     //         setRolen('Mahasiswa');
+//     //         //rolen => setRolen(rolen)        
+//     //     }
+//     //     else if (rolget== "ROL01"){
+//     //         setRolen('Karyawan');
+//     //         //rolen => setRolen(rolen) 
+//     //     }
+//     // //}
+// >>>>>>> main
 
     return (
         <View style={ styles.page }>            
@@ -40,7 +64,8 @@ const data = " Karyawan ";
                         Apabila dirasa ada yang perlu disampaikan secara khusus dan urgent silahkan menghubungi langsung tim DKAK ataupun tim kendali COVID-19 Polman Astra (Ka. Dept DKAK atau Ka. Dept DPUSDM).{"\n\n"}
                         Diharapkan semua karyawan Polman Astra dapat mengisi dengan benar data kesehatan harian dan absensi ini dan menjadi bagian dari absen harian seperti saat perkuliahan dalam keadaaan normal.
                     </Text>
-                    <InformasiPengisian data={data} /> 
+                    {/* <InformasiPengisian data={data} />  */}
+                    <InformasiPengisian /> 
                     {/* NOTIFIKASI PENGISIAN AKAN AKTIF JIKA SUDAH MENGISI FORMULIR*/}
                     {/* BUTTON ISI FORMULIR AKAN AKTTIF JIKA BELUM MENGISI FORMULIR */}
                     {hasAbsen == true ? <NotifPengisian data={data}/>  : <ButtonIsiFormulir navigation = {navigation}/>}
