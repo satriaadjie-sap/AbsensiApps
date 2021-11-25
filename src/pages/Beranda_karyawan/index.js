@@ -7,28 +7,6 @@ let rolget = '';
 
 const Beranda_karyawan = ({hasAbsen=false, navigation}) => {
 
-//const [rolen, setRolen] = useState('');
-const data = " Karyawan ";
-
-    // AsyncStorage.getItem('user', (error, result) => {
-    //     if(result){
-    //         //Parse result ke JSON
-    //         let resultParsed = JSON.parse(result)
-    //         rolget = resultParsed.role;
-    //     }
-    // });
-
-    // //const myFunction = () => {
-    //     if (rolget == "ROL23"){
-    //         setRolen('Mahasiswa');
-    //         //rolen => setRolen(rolen)        
-    //     }
-    //     else if (rolget== "ROL01"){
-    //         setRolen('Karyawan');
-    //         //rolen => setRolen(rolen) 
-    //     }
-    // //}
-
     return (
         <View style={ styles.page }>            
             <ScrollView  style={styles.containerScroll}>
