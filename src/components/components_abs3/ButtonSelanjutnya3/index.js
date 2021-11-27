@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import axios, { Axios } from 'axios'
+import { useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native';
 import { Alert, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
@@ -7,9 +8,12 @@ import { WARNA_BIRU, WARNA_BIRU_MUDA, WARNA_HITAM, WARNA_PUTIH, LINK_API } from 
 // import { Form_absensi_sudah, Form_absensi_1, Form_absensi_2, Form_absensi_3,
 //     Form_absensi_4, Form_absensi_5, Form_absensi_detail } from './Form_routing'
 
-const ButtonSelanjutnya3 = ({navigation}) => {
+const ButtonSelanjutnya3 = (props) => {
+
+    const nav = useNavigation();
+
     const [step, setStep] = useState('Step 1')
-    const [nim, setNim] = useState('0320190027')
+    const [nim, setNim] = useState('0320190003')
     const [tinggal, setTinggal] = useState('Jakarta')
     const [posisi, setPosisi] = useState('Bandung')
     const [astra, setAstra] = useState('y')
@@ -52,21 +56,59 @@ const ButtonSelanjutnya3 = ({navigation}) => {
             &kendaraanDesc=${kendaraanDesc}&RS=${rs}&RSDesc=${rsDesc}&sudahVaksin=${sudahVaksin}
             &jumlahVaksin=${jumlahVaksin}&namaVaksin=${namaVaksin}&sertifVaksin=${sertifVaksin}`)
             .then((res) => {
-            
                 if(res.data.result === "SUCCESS") {
                     // let step = res.data.step;
-                    // let nim = res.data.nim;
+                    let fma_id = res.data.fma_id;
                 
                     // let data = {
                     //     step: step,
                     //     nim: nim
                     // }
                     // console.log(data);
-                    // navigation.replace('Absensi4');
-                    // navigation.navigate('Absensi4');
+                    props.navigation.navigate('Form_absensi_4')
+                    // navigation.replace('MainAppKry');
+                    // nav.navigate('Form_absensi_4');
 
                     //notif kalo berhasil diubah
-                    alert('Berhasil tambah data');
+                    alert('Berhasil tambah data ' + fma_id);
+                    return;
+                }
+                else
+                {
+                    //notif gagal diubah
+                    console.log(error);
+                    alert('Gagal menambah data!');
+                    return;
+                }   
+            })
+            .catch(error => alert(error))
+            // .finally(() => setLoading(false));
+            
+        axios
+            .post(`${LINK_API}Absensi/CreateAbsensi?step=${step}&nim=${nim}&tempatTinggal=${tinggal}
+            &posisi=${posisi}&astra=${astra}&astraDesc=${astraDesc}&noHp=${noHP}&profesi=${profesi}
+            &luarNegri=${luarNegri}&luarNegriDesc=${luarNegriDesc}&kesehatan=${kesehatan}
+            &kesehatanDesc=${kesehatanDesc}&kesehatanFam=${kesehatanFam}&kesehatanFamDesc=${kesehatanFamDesc}
+            &covid=${covid}&covidDesc=${covidDesc}&covidArr=${covidArr}&covidArrDesc=${covidArrDesc}
+            &riwayat=${riwayat}&ojt=${ojt}&ojtAlamat=${ojtAlamat}&ojtDesc=${ojtDesc}&kendaraan=${kendaraan}
+            &kendaraanDesc=${kendaraanDesc}&RS=${rs}&RSDesc=${rsDesc}&sudahVaksin=${sudahVaksin}
+            &jumlahVaksin=${jumlahVaksin}&namaVaksin=${namaVaksin}&sertifVaksin=${sertifVaksin}`)
+            .then((res) => {
+                if(res.data.result === "SUCCESS") {
+                    // let step = res.data.step;
+                    let fma_id = res.data.fma_id;
+                
+                    // let data = {
+                    //     step: step,
+                    //     nim: nim
+                    // }
+                    // console.log(data);
+                    props.navigation.navigate('Form_absensi_4')
+                    // navigation.replace('MainAppKry');
+                    // nav.navigate('Form_absensi_4');
+
+                    //notif kalo berhasil diubah
+                    alert('Berhasil tambah data ' + fma_id);
                     return;
                 }
                 else
@@ -77,14 +119,15 @@ const ButtonSelanjutnya3 = ({navigation}) => {
                     return;
                 }    
             })
-            .catch(error => alert(''))
-            .finally(() => setLoading(false));
-            };
+            .catch(error => alert(error))
+            // .finally(() => setLoading(false));
+        };
             
     return (
         <View  style={styles.button}>
             <TouchableOpacity
                 onPress={handleSubmitPress}
+                // onPress={() => props.navigation.navigate("Form Absensi")}
                 // onPress={() => navigation.replace('Absensi4')}
                 // onPress={() => Alert.alert("Selanjutnya")}
             >
@@ -97,7 +140,7 @@ const ButtonSelanjutnya3 = ({navigation}) => {
 export default ButtonSelanjutnya3
 
 const styles = StyleSheet.create({    
-    button:{
+    button:{    
         backgroundColor:WARNA_BIRU_MUDA,
         width:100,
         height:25,

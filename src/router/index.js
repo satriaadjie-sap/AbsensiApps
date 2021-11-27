@@ -15,8 +15,8 @@ const MainApp = () => {
     return (
         <Tab.Navigator tabBar={props => <BottomTabNavigator {...props} />}>
             <Tab.Screen name="Beranda" component={Beranda} />
-            <Tab.Screen name="Form Absensi" component={Riwayat_absensi_mahasiswa} />
-            {/* <Tab.Screen name="Form Absensi" component={Form_absensi} /> */}
+            {/* <Tab.Screen name="Form Absensi" component={Riwayat_absensi_mahasiswa} /> */}
+            <Tab.Screen name="Form Absensi" component={Form_absensi} />
             <Tab.Screen name="Pengumuman" component={Riwayat_pengumuman} />
             <Tab.Screen name="Ubah Sandi" component={Ubah_sandi} />
             {/* <Tab.Screen name="LogOut" component={Logout} /> */}
@@ -29,8 +29,8 @@ const MainAppKry = () => {
     return (
         <Tab.Navigator tabBar={props => <BottomTabNavigator {...props} />}>
             <Tab.Screen name="Beranda" component={Beranda_karyawan} />
-            <Tab.Screen name="Form Absensi" component={Riwayat_absensi} />
-            {/* <Tab.Screen name="Form Absensi" component={Form_absensi_Kry} /> */}
+            {/* <Tab.Screen name="Form Absensi" component={Riwayat_absensi} /> */}
+            <Tab.Screen name="Form Absensi" component={Form_absensi_Kry} />
             <Tab.Screen name="Pengumuman" component={Riwayat_pengumuman_karyawan} />
             <Tab.Screen name="Ubah Sandi" component={Ubah_sandi} />
             {/* <Tab.Screen name="LogOut" component={Logout} /> */}
@@ -53,28 +53,26 @@ const MainAppSatgas = () => {
 }
 
 function Header() {
+    // const [user, setUser] = useState('');
+    // const [role, setRole] = useState('');
 
-    
-    const [user, setUser] = useState('');
-    const [role, setRole] = useState('');
+    //     AsyncStorage.getItem('user', (error, result) => {
+    //     if(result){
+    //         //Parse result ke JSON
+    //         let resultParsed = JSON.parse(result)
+    //         // user.push(resultParsed.name);
+    //         // role.push(resultParsed.role);
+    //         setUser(resultParsed.name);
+    //         setRole(resultParsed.role);
+    //         }
+    //     });
 
-        AsyncStorage.getItem('user', (error, result) => {
-        if(result){
-            //Parse result ke JSON
-            let resultParsed = JSON.parse(result)
-            // user.push(resultParsed.name);
-            // role.push(resultParsed.role);
-            setUser(resultParsed.name);
-            setRole(resultParsed.role);
-            }
-        });
-
-    if (role == "ROL23"){
-        setRole("MAHASISWA")
-    }
-    else if (role == "ROL01"){
-        setRole("KARYAWAN")
-    }
+    // if (role == "ROL23"){
+    //     setRole("MAHASISWA")
+    // }
+    // else if (role == "ROL01"){
+    //     setRole("KARYAWAN")
+    // }
 
     return (        
 // const Absensi4 = () => {    
@@ -96,10 +94,10 @@ function Header() {
         <View style={styles.containerHeader}>            
             <HeaderApps/>
             <HeaderInformation 
-                    user={user}
-                    role={role}
-                    // user='a'
-                    // role='b'
+                    // user={user}
+                    // role={role}
+                    user='a'
+                    role='b'
                     //lastLogin="Login terakhir: 7 Mei 2021, 14:06 WIB"
                     notification="Anda sudah mengisi formulir absensi dan pendataan kesehatan mahasiswa. Terima kasih. "
                     />            

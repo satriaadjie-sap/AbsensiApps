@@ -10,7 +10,7 @@ const InformasiDataDiri = ({nim, nama, prodi, tingkat, status, beasiswa, nomor})
                     NPK/Nama Akun
                 </Text>
                 <Text style={styles.textBody}>
-                    0320190027 - SATRIA ADJIE
+                    234235234
                 </Text>
             </View>
             <View style={styles.textContainer}>
