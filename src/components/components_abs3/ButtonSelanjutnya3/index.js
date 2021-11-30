@@ -45,7 +45,7 @@ const ButtonSelanjutnya3 = (props) => {
     const [namaVaksin, setNamaVaksin] = useState('tes')
     const [sertifVaksin, setSertifVaksin] = useState('tes')
 
-    const handleSubmitPress = () => {
+    const handleSubmitPress = (props) => {
         axios
             .post(`${LINK_API}Absensi/CreateAbsensi?step=${step}&nim=${nim}&tempatTinggal=${tinggal}
             &posisi=${posisi}&astra=${astra}&astraDesc=${astraDesc}&noHp=${noHP}&profesi=${profesi}
@@ -65,7 +65,7 @@ const ButtonSelanjutnya3 = (props) => {
                     //     nim: nim
                     // }
                     // console.log(data);
-                    props.navigation.navigate('Form_absensi_4')
+                    props.navigation.navigate('/src/pages/Form_absensi/Form_absensi_4')
                     // navigation.replace('MainAppKry');
                     // nav.navigate('Form_absensi_4');
 
@@ -80,44 +80,6 @@ const ButtonSelanjutnya3 = (props) => {
                     alert('Gagal menambah data!');
                     return;
                 }   
-            })
-            .catch(error => alert(error))
-            // .finally(() => setLoading(false));
-            
-        axios
-            .post(`${LINK_API}Absensi/CreateAbsensi?step=${step}&nim=${nim}&tempatTinggal=${tinggal}
-            &posisi=${posisi}&astra=${astra}&astraDesc=${astraDesc}&noHp=${noHP}&profesi=${profesi}
-            &luarNegri=${luarNegri}&luarNegriDesc=${luarNegriDesc}&kesehatan=${kesehatan}
-            &kesehatanDesc=${kesehatanDesc}&kesehatanFam=${kesehatanFam}&kesehatanFamDesc=${kesehatanFamDesc}
-            &covid=${covid}&covidDesc=${covidDesc}&covidArr=${covidArr}&covidArrDesc=${covidArrDesc}
-            &riwayat=${riwayat}&ojt=${ojt}&ojtAlamat=${ojtAlamat}&ojtDesc=${ojtDesc}&kendaraan=${kendaraan}
-            &kendaraanDesc=${kendaraanDesc}&RS=${rs}&RSDesc=${rsDesc}&sudahVaksin=${sudahVaksin}
-            &jumlahVaksin=${jumlahVaksin}&namaVaksin=${namaVaksin}&sertifVaksin=${sertifVaksin}`)
-            .then((res) => {
-                if(res.data.result === "SUCCESS") {
-                    // let step = res.data.step;
-                    let fma_id = res.data.fma_id;
-                
-                    // let data = {
-                    //     step: step,
-                    //     nim: nim
-                    // }
-                    // console.log(data);
-                    props.navigation.navigate('Form_absensi_4')
-                    // navigation.replace('MainAppKry');
-                    // nav.navigate('Form_absensi_4');
-
-                    //notif kalo berhasil diubah
-                    alert('Berhasil tambah data ' + fma_id);
-                    return;
-                }
-                else
-                {
-                    //notif gagal diubah
-                    console.log(error);
-                    alert('Gagal menambah data!');
-                    return;
-                }    
             })
             .catch(error => alert(error))
             // .finally(() => setLoading(false));
