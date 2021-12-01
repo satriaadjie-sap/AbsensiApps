@@ -16,8 +16,8 @@ const MainApp = () => {
     return (
         <Tab.Navigator tabBar={props => <BottomTabNavigator {...props} />}>
             <Tab.Screen name="Beranda" component={Beranda} />
-            <Tab.Screen name="Form Absensi" component={Riwayat_absensi_mahasiswa} />
-            {/* <Tab.Screen name="Form Absensi" component={Form_absensi} /> */}
+            {/* <Tab.Screen name="Form Absensi" component={Riwayat_absensi_mahasiswa} /> */}
+            <Tab.Screen name="Form Absensi" component={Form_absensi} />
             <Tab.Screen name="Pengumuman" component={Riwayat_pengumuman} />
             <Tab.Screen name="Ubah Sandi" component={Ubah_sandi} />
             {/* <Tab.Screen name="LogOut" component={Logout} /> */}
@@ -30,8 +30,8 @@ const MainAppKry = () => {
     return (
         <Tab.Navigator tabBar={props => <BottomTabNavigator {...props} />}>
             <Tab.Screen name="Beranda" component={Beranda_karyawan} />
-            <Tab.Screen name="Form Absensi" component={Riwayat_absensi} />
-            {/* <Tab.Screen name="Form Absensi" component={Form_absensi_Kry} /> */}
+            {/* <Tab.Screen name="Form Absensi" component={Riwayat_absensi} /> */}
+            <Tab.Screen name="Form Absensi" component={Form_absensi_Kry} />
             <Tab.Screen name="Pengumuman" component={Riwayat_pengumuman_karyawan} />
             <Tab.Screen name="Ubah Sandi" component={Ubah_sandi} />
         </Tab.Navigator>        
@@ -113,8 +113,6 @@ function Header() {
             <HeaderInformation 
                     user={user}
                     role={role}
-                    // user="{user}"
-                    // role="{role}"
                     //lastLogin="Login terakhir: 7 Mei 2021, 14:06 WIB"
                     //notification="Anda sudah mengisi formulir absensi dan pendataan kesehatan mahasiswa. Terima kasih. "
 
