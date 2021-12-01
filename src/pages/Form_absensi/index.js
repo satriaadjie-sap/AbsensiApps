@@ -24,6 +24,36 @@ const MainForm = () => {
                      headerShown:false
                 }}
                 />
+            <Stack.Screen name="Form_absensi_1"
+                component={Form_absensi_1} 
+                options={{
+                     headerShown:false
+                }}
+                />
+            <Stack.Screen name="Form_absensi_2"
+                component={Form_absensi_2}
+                options={{
+                     headerShown:false
+                }}
+                />
+            <Stack.Screen name="Form_absensi_3"
+                component={Form_absensi_3}
+                options={{
+                     headerShown:false
+                }}
+                />
+            <Stack.Screen name="Form_absensi_4"
+                component={Form_absensi_4}
+                options={{
+                     headerShown:false
+                }}
+                />
+            <Stack.Screen name="Form_absensi_3"
+                component={Form_absensi_4}
+                options={{
+                     headerShown:false
+                }}
+                />
         </Stack.Navigator>
     )
 }
@@ -32,13 +62,13 @@ const Form_absensi = () => {
     return (
         <View style={ styles.page }>
             <ScrollView style={styles.containerScrollView}>
-                {/* <MainForm/> */}
+                <MainForm/>
                 {/* <Form_absensi_sudah/> */}
                 {/* <Form_absensi_detail/> */}
-                <Form_absensi_1/>
-                <Form_absensi_2/>
-                <Form_absensi_3/>
-                <Form_absensi_4/>
+                {/* <Form_absensi_1/> */}
+                {/* <Form_absensi_2/> */}
+                {/* <Form_absensi_3/> */}
+                {/* <Form_absensi_4/> */}
                 {/* <Form_absensi_5/> */}
             </ScrollView>
         </View>

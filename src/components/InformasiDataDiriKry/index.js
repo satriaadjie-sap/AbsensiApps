@@ -7,34 +7,26 @@ const InformasiDataDiri = ({nim, nama, prodi, tingkat, status, beasiswa, nomor})
         <View style={styles.container}>
             <View style={styles.textContainer}>
                 <Text style={styles.textHeader}>
-                    NIM - Nama
+                    NPK/Nama Akun
                 </Text>
                 <Text style={styles.textBody}>
-                    0320190027 - Satria Adjie Prayoga
+                    234235234
                 </Text>
             </View>
             <View style={styles.textContainer}>
                 <Text style={styles.textHeader}>
-                    Program Studi - Tingkat
+                    Nama
                 </Text>
                 <Text style={styles.textBody}>
-                   Manajemen Informatika (MI) - Tingkat 2
+                   Yosep Setiawan
                 </Text>
             </View>
             <View style={styles.textContainer}>
                 <Text style={styles.textHeader}>
-                    Status Mahasiswa 
+                    Seksi/Departemen
                 </Text>
                 <Text style={styles.textBody}>
-                    Aktif - Reguler
-                </Text>
-            </View>
-            <View style={styles.textContainer}>
-                <Text style={styles.textHeader}>
-                    Nomor Handphone
-                </Text>
-                <Text style={styles.textBody}>
-                    0896 3768 8078
+                    LPPM
                 </Text>
             </View>
         </View>
