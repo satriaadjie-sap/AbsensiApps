@@ -14,6 +14,8 @@ class Form_1 extends Component{
         }
     }
     render(){
+        const state = this.state;
+        const props = this.props;
         let equalizeData = this.props.data.map((myValue, index) => {
             //============== DATA 1
             var info1 = myValue.fam_alamat_tinggal.split(",,,");
