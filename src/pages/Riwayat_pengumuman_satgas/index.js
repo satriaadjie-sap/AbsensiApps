@@ -28,12 +28,12 @@ const IndexPengumuman_sat = () => {
                      headerShown:false
                 }}
                 />
-                <Stack.Screen name="Riwayat_pengumuman_detail_kry"
+                {/* <Stack.Screen name="Riwayat_pengumuman_detail_kry"
                 component={Riwayat_pengumuman_detail_kry} 
                 options={{
                      headerShown:false
                 }}
-                />
+                /> */}
         </Stack.Navigator>
         
     )
