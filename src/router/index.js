@@ -4,7 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {Beranda, Beranda_karyawan, Beranda_satgas, Form_absensi, Riwayat_absensi, Form_absensi_Kry, 
     Riwayat_absensi_mahasiswa, Riwayat_pengumuman, Riwayat_pengumuman_karyawan, 
-    Riwayat_pengumuman_satgas, Laporan_satgas, Testing, Ubah_sandi, Login} from '../pages';
+    Riwayat_pengumuman_satgas, Pengumuman, Laporan_satgas, Testing, Ubah_sandi, Login} from '../pages';
 import { BottomTabNavigator, HeaderApps, HeaderInformation } from '../components';
 import { IconLogoPolman } from '../assets';
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../utils/constants';
@@ -41,8 +41,8 @@ const MainAppKry = () => {
 const MainAppSatgas = () => {    
     return (
         <Tab.Navigator tabBar={props => <BottomTabNavigator {...props} />}>
-            {/* <Tab.Screen name="Beranda" component={Beranda_satgas} /> */}
-            <Tab.Screen name="Laporan Absensi" component={Laporan_satgas} />
+            <Tab.Screen name="Beranda" component={Beranda_satgas} />
+            {/* <Tab.Screen name="Laporan Satgas" component={Laporan_satgas} /> */}
             <Tab.Screen name="Pengumuman" component={Riwayat_pengumuman_satgas} />
         </Tab.Navigator>
     )

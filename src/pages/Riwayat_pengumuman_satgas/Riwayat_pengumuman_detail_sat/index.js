@@ -13,7 +13,7 @@ export default class Riwayat_pengumuman_detail_sat extends Component{
             data: []
           } 
     }
-    GetDetailPengumuman = async () => {
+    GetDetailPengumumanSat = async () => {
         try{
             const pen_id = await AsyncStorage.getItem('pen_id');
             fetch('http://10.0.2.2:8080/get-pengumuman?id='+pen_id)
@@ -30,7 +30,7 @@ export default class Riwayat_pengumuman_detail_sat extends Component{
         
     }
     componentDidMount(){
-      this.GetDetailPengumuman();
+      this.GetDetailPengumumanSat();
     }
     render(){
         const state = this.state;
