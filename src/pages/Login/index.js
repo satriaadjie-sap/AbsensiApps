@@ -69,7 +69,7 @@ const Login = ({navigation}) => {
 
                         }
                         AsyncStorage.setItem('user', JSON.stringify(data));
-                        navigation.replace('MainApp');
+                        //navigation.replace('MainApp');
 
                     } else if (res.data.rol_id != "ROL23" && res.data.isSatgas === "1"){
                         // untuk karyawan + satgas
@@ -91,7 +91,7 @@ const Login = ({navigation}) => {
                                 isSatgas: isSatgas
                             }
                             AsyncStorage.setItem('user', JSON.stringify(data));
-                            navigation.replace('MainAppSatgas');
+                            //navigation.replace('MainAppSatgas');
 
                         } else {
                             // untuk karyawan
@@ -113,7 +113,7 @@ const Login = ({navigation}) => {
                                 isSatgas: isSatgas
                             }
                             AsyncStorage.setItem('user', JSON.stringify(data));
-                            navigation.replace('MainAppKry');
+                            //navigation.replace('MainAppKry');
                     }
                 }
                 else
