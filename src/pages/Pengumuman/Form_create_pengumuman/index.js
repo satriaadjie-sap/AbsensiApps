@@ -3,7 +3,8 @@ import {Picker} from '@react-native-picker/picker'
 import {StyleSheet, Text, TextInput, View } from 'react-native'
 import { WARNA_BG_FORM, WARNA_HITAM, WARNA_MERAH, WARNA_PUTIH } from '../../../utils/constants';
 
-const Form_create_pengumuman = (props) => {
+
+const Form_create_pengumuman = () => {
     const [selectedValue, setSelectedValue] = useState("");
     return (
         <View style={styles.container}>            
@@ -48,7 +49,7 @@ const Form_create_pengumuman = (props) => {
     )
 }
 
-export default Form_create_pengumuman
+export default FormPengisian_3_1
 
 const styles = StyleSheet.create({
     container:{

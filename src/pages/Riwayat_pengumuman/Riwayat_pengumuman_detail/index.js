@@ -11,7 +11,7 @@ export default class Riwayat_pengumuman_detail extends Component{
         super(props);
         this.state = {
             data: []
-        } 
+          } 
     }
     GetDetailPengumuman = async () => {
         try{

@@ -6,7 +6,6 @@ import { Table, Row,TableWrapper, Cell } from 'react-native-table-component';
 import { DataTable } from 'react-native-paper';
 import { CellAksiPengumuman } from '../..';
 import { WARNA_HITAM, WARNA_PUTIH, WARNA_SEKUNDER, WARNA_UTAMA, LINK_API  } from '../../../utils/constants';
-import CellAksiPengumumanSatgas from '../../CellAksiPengumuman/CellAksiPengumumanSatgas';
 
 let usern = '';
 let rolen = '';
@@ -30,7 +29,7 @@ export default class TablePengumumanSatgas extends Component {
       }      
     }
 
-    async GetPengumumanSat() {
+    async GetPengumuman() {
       try 
       {
           axios
@@ -58,7 +57,7 @@ export default class TablePengumumanSatgas extends Component {
 
     async componentDidMount(){
       //if(rolen === "ROL23"){
-        this.GetPengumumanSat();
+        this.GetPengumuman();
       //   forceUpdate();
       // }
       // else if (rolen === "ROL01"){
@@ -86,7 +85,7 @@ export default class TablePengumumanSatgas extends Component {
                   <Text style={styles.textData}>{myValue.pen_created_date}</Text></DataTable.Cell>
                 
                 <DataTable.Cell  style={{flex: 0.5}}>
-                  <CellAksiPengumumanSatgas navigation={props.navigation} pen_id={myValue.pen_id}/></DataTable.Cell>
+                  <CellAksiPengumuman navigation={props.navigation} pen_id={myValue.pen_id}/></DataTable.Cell>
             </DataTable.Row>
           )
       });
