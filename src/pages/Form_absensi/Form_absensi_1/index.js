@@ -7,7 +7,7 @@ import { ButtonBatal1, ButtonSelanjutnya1, FormPengisian_1_1, FormPengisian_1_2,
 
 import { WARNA_SEKUNDER } from '../../../utils/constants'
 
-const Form_absensi_1 = () => {
+const Form_absensi_1 = ({navigation}) => {
     return (
         <View>
             <ScrollView style={styles.containerScrollView}>
@@ -29,6 +29,7 @@ const Form_absensi_1 = () => {
                 <View style={styles.button}>
                     {/* <ButtonBatal1/> */}
                     {/* <ButtonSelanjutnya1/> */}
+                    <ButtonSelanjutnya1 navigation={navigation}/>
                 </View>
             </ScrollView>
         </View>

@@ -46,7 +46,7 @@ const ButtonSelanjutnya1 = () => {
                 
                 if(res.data.result === "SUCCESS") {
                     // let step = res.data.step;
-                    // let nim = res.data.nim;
+                    let for_id = res.data.for_id;
                 
                     // let data = {
                     //     step: step,
@@ -57,7 +57,7 @@ const ButtonSelanjutnya1 = () => {
                     // navigation.navigate('Absensi4');
 
                     //notif kalo berhasil diubah
-                    alert('Berhasil tambah data');
+                    alert('Berhasil tambah data ' + for_id);
                     return;
                 }
                 else
