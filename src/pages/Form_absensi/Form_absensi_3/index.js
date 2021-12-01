@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import { FormPengisian_3_1, HeaderFormAbsesni, ButtonBatal3, ButtonSelanjutnya3 } from '../../../components'
 import { WARNA_SEKUNDER } from '../../../utils/constants'
 
-const Form_absensi_3 = ({navigation}) => {
+const Form_absensi_3 = () => {
     return (
         <View>
             <View style={styles.containerForm}>
@@ -12,7 +12,7 @@ const Form_absensi_3 = ({navigation}) => {
             </View>
             <View style={styles.button}>
                 <ButtonBatal3/>
-                <ButtonSelanjutnya3 navigation = {navigation}/>
+                <ButtonSelanjutnya3/>
             </View>
         </View>
     )
