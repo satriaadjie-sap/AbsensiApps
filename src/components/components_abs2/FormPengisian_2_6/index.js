@@ -6,6 +6,10 @@ import { WARNA_BG_FORM, WARNA_HITAM, WARNA_MERAH, WARNA_PUTIH } from '../../../u
 
 const FormPengisian_2_6 = () => {
     const [selectedValue, setSelectedValue] = useState("");
+    const [selectedValue2, setSelectedValue2] = useState("");
+    const [selectedValue3, setSelectedValue3] = useState("");
+    const [selectedValue4, setSelectedValue4] = useState("");
+
     return (
         <View style={styles.container}>
 
@@ -24,7 +28,7 @@ const FormPengisian_2_6 = () => {
                     >
                         <Picker.Item label="-- Pilih --" value="" />
                         <Picker.Item label="Sudah" value="1" />
-                        <Picker.Item label="belum" value="0" />
+                        <Picker.Item label="Belum" value="0" />
                     </Picker>
                 </View>
             </View>
@@ -36,11 +40,11 @@ const FormPengisian_2_6 = () => {
                 </Text>
                 <View style={styles.comboBox}>
                     <Picker
-                        selectedValue={selectedValue}                                                
+                        selectedValue={selectedValue2}                                                
                         mode="dropdown"
                         backgroundColor={WARNA_PUTIH}
                         fontSize="13"
-                        onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+                        onValueChange={(itemValue, itemIndex) => setSelectedValue2(itemValue)}
                     >
                         <Picker.Item label="-- Pilih --" value="" />
                         <Picker.Item label="Satu Kali" value="1" />
@@ -56,15 +60,19 @@ const FormPengisian_2_6 = () => {
                 </Text>
                 <View style={styles.comboBox}>
                     <Picker
-                        selectedValue={selectedValue}                                                
+                        selectedValue={selectedValue3}                                                
                         mode="dropdown"
                         backgroundColor={WARNA_PUTIH}
                         fontSize="13"
-                        onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+                        onValueChange={(itemValue, itemIndex) => setSelectedValue3(itemValue)}
                     >
                         <Picker.Item label="-- Pilih --" value="" />
-                        <Picker.Item label="Sudah" value="1" />
-                        <Picker.Item label="belum" value="0" />
+                        <Picker.Item label="sinopharm" value="1" />
+                        <Picker.Item label="Sinovac" value="2" />
+                        <Picker.Item label="AstraZeneca" value="3" />
+                        <Picker.Item label="Pfizer" value="4" />
+                        <Picker.Item label="Moderna" value="5" />
+                        <Picker.Item label="Lainnya" value="6" />
                     </Picker>
                 </View>
             </View>
@@ -76,15 +84,15 @@ const FormPengisian_2_6 = () => {
                 </Text>
                 <View style={styles.comboBox}>
                     <Picker
-                        selectedValue={selectedValue}                                                
+                        selectedValue={selectedValue4}                                                
                         mode="dropdown"
                         backgroundColor={WARNA_PUTIH}
                         fontSize="13"
-                        onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+                        onValueChange={(itemValue, itemIndex) => setSelectedValue4(itemValue)}
                     >
                         <Picker.Item label="-- Pilih --" value="" />
                         <Picker.Item label="Sudah" value="1" />
-                        <Picker.Item label="belum" value="0" />
+                        <Picker.Item label="Belum" value="0" />
                     </Picker>
                 </View>
             </View>

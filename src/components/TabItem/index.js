@@ -13,6 +13,9 @@ const TabItem = ({label, isFocused, onPress, onLongPress}) => {
         if(label === "Form Absensi"){
             return isFocused ? <IconAbsensi_aktif/> : <IconAbsensi/>
         }
+        if(label === "Form Absensi Karyawan"){
+            return isFocused ? <IconAbsensi_aktif/> : <IconAbsensi/>
+        }
         if(label === "Pengumuman"){
             return isFocused ? <IconPengumuman_aktif/> : <IconPengumuman/>
         }

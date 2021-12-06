@@ -45,6 +45,10 @@ const ButtonSelanjutnya3 = (props) => {
     const [namaVaksin, setNamaVaksin] = useState('tes')
     const [sertifVaksin, setSertifVaksin] = useState('tes')
 
+    const PindahForm = () => {
+        props.navigation.navigate('Form_absensi_4')
+    }
+
     const handleSubmitPress = (props) => {
         axios
             .post(`${LINK_API}Absensi/CreateAbsensi?step=${step}&nim=${nim}&tempatTinggal=${tinggal}
@@ -88,7 +92,8 @@ const ButtonSelanjutnya3 = (props) => {
     return (
         <View  style={styles.button}>
             <TouchableOpacity
-                onPress={handleSubmitPress}
+                onPress={PindahForm}
+                // onPress={handleSubmitPress}
                 // onPress={() => props.navigation.navigate("Form Absensi")}
                 // onPress={() => navigation.replace('Absensi4')}
                 // onPress={() => Alert.alert("Selanjutnya")}

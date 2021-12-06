@@ -5,7 +5,7 @@ import axios, { Axios } from 'axios'
 import { Alert, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { WARNA_BIRU, WARNA_BIRU_MUDA, WARNA_HITAM, WARNA_PUTIH, LINK_API } from '../../../utils/constants'
 
-const ButtonSelanjutnya1 = () => {
+const ButtonSelanjutnya1 = (props) => {
     const [step, setStep] = useState('Step 1')
     const [npk, setNpk] = useState('123523')
     const [hamil, setHamil] = useState('tidak')
@@ -31,6 +31,10 @@ const ButtonSelanjutnya1 = () => {
     const [jumlahVaksin, setJumlahVaksin] = useState('tes')
     const [namaVaksin, setNamaVaksin] = useState('tes')
     const [sertifVaksin, setSertifVaksin] = useState('tes')
+
+    const PindahForm = () => {
+        props.navigation.navigate('Form_absensi_2')
+    }
 
     const handleSubmitPress = () => {
         axios
@@ -75,7 +79,7 @@ const ButtonSelanjutnya1 = () => {
     return (        
         <View  style={styles.button}>
             <TouchableOpacity
-                onPress={handleSubmitPress}
+                onPress={PindahForm}
                 // onPress={() => Alert.alert("Selanjutnya")}
             >
                 <Text style={styles.textButton}>SELANJUTNYA</Text>

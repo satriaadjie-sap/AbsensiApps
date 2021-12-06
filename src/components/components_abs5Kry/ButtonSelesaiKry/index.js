@@ -2,11 +2,15 @@ import React from 'react'
 import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { WARNA_HITAM, WARNA_PUTIH, WARNA_UNGU_MUDA } from '../../../utils/constants'
 
-const ButtonSelesaiKry = () => {
+const ButtonSelesaiKry = (props) => {
+    const PindahForm = () => {
+        props.navigation.navigate('Form_absensi_sudah')
+    }
     return (        
         <View  style={styles.button}>
             <TouchableOpacity
-                onPress={() => Alert.alert("Selesai")}
+                onPress={PindahForm}
+                // onPress={() => Alert.alert("Selesai")}
             >
                 <Text style={styles.textButton}>SELESAI</Text>
             </TouchableOpacity>

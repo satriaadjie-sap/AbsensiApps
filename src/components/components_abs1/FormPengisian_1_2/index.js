@@ -84,60 +84,6 @@ class FormPengisian_1_2 extends Component {
         });     
         return (
             <View style={styles.container}>
-            
-                {/* Pilihan Anda */}
-                <View style={styles.containerQuestion}>
-                    <Text style={styles.textHeader}>
-                    Jenis Kelamin
-                        <Text style={styles.Mandatory}> *</Text>
-                    </Text>
-                    <View style={styles.comboBox}>
-                        <Picker
-                            selectedValue={this.state.selectedValue}
-                            mode="dropdown"
-                            backgroundColor={WARNA_PUTIH}
-                            fontSize="13"                            
-                        >
-                            <Picker.Item label="-- Pilih --" value="-" />
-                            <Picker.Item label="Perempuan" value="0" />
-                            <Picker.Item label="Laki-laki" value="1" />
-                        </Picker>
-                    </View>
-                </View>
-
-                {/* Informasi pengisian */}
-                <View style={styles.containerQuestion}>
-                    <Text style={styles.textHeader}>
-                    Di mana posisi anda saat ini?
-                        <Text style={styles.Mandatory}> *</Text>
-                    </Text>
-                    <InformasiTinggalBersama/>
-                    {/* <ButtonSalin/> */}
-                </View>
-    
-                {/* Pilihan Anda */}
-                <View style={styles.containerQuestion}>
-                    <Text style={styles.textHeader}>
-                    Pilihan Anda 
-                        <Text style={styles.Mandatory}> *</Text>
-                    </Text>
-                    <View style={styles.comboBox}>
-                        <Picker
-                            selectedValue={this.state.selectedValue}                                                
-                            mode="dropdown"
-                            backgroundColor={WARNA_PUTIH}
-                            fontSize="13"
-                            onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
-                        >
-                            <Picker.Item label="-- Pilih --" value="" />
-                            <Picker.Item label="Keluarga (Orang Tua/Kakak/Adik)" value="" />
-                            <Picker.Item label="Kerabat (Bukan Keluarga Inti)" value="" />
-                            <Picker.Item label="Kos/Kontrakan (Bukan dengan Keluarga/Kerabat)" value="" />
-                            <Picker.Item label="Mess Perusahaan (Site)" value="" />
-                            <Picker.Item label="Lainnya" value="" />
-                        </Picker>
-                    </View>
-                </View>
     
                 {/* Nama Jalan/Blok/RT dan RW */}
                 <View style={styles.containerQuestion}>

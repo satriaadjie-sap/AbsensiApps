@@ -3,7 +3,6 @@ import {Picker} from '@react-native-picker/picker'
 import {StyleSheet, Text, TextInput, View } from 'react-native'
 import { WARNA_BG_FORM, WARNA_HITAM, WARNA_MERAH, WARNA_PUTIH } from '../../../utils/constants';
 
-
 const FormPengisian_3_1 = () => {
     const [selectedValue, setSelectedValue] = useState("");
     return (
@@ -23,8 +22,8 @@ const FormPengisian_3_1 = () => {
                         onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
                     >
                         <Picker.Item label="-- Pilih --" value="" />
-                        <Picker.Item label="Ya" value="" />
-                        <Picker.Item label="Tidak" value="" />
+                        <Picker.Item label="Ya" value="1" />
+                        <Picker.Item label="Tidak" value="0" />
                     </Picker>
                 </View>
             </View>

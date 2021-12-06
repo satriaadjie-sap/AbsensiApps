@@ -10,7 +10,7 @@ const Stack = createStackNavigator();
 
 const MainForm = () => {
     return (
-        <Stack.Navigator initialRouteName="Form_absensi_sudah">
+        <Stack.Navigator initialRouteName="Form_absensi_1">
             <Stack.Screen name="Form_absensi_sudah"
                 component={Form_absensi_sudah} 
                 // component={Form_absensi_1} 
@@ -20,6 +20,36 @@ const MainForm = () => {
                 />
             <Stack.Screen name="Form_absensi_detail"
                 component={Form_absensi_detail} 
+                options={{
+                     headerShown:false
+                }}
+                />
+            <Stack.Screen name="Form_absensi_1"
+                component={Form_absensi_1} 
+                options={{
+                     headerShown:false
+                }}
+                />
+            <Stack.Screen name="Form_absensi_2"
+                component={Form_absensi_2}
+                options={{
+                     headerShown:false
+                }}
+                />
+            <Stack.Screen name="Form_absensi_3"
+                component={Form_absensi_3}
+                options={{
+                     headerShown:false
+                }}
+                />
+            <Stack.Screen name="Form_absensi_4"
+                component={Form_absensi_4}
+                options={{
+                     headerShown:false
+                }}
+                />
+            <Stack.Screen name="Form_absensi_5"
+                component={Form_absensi_5}
                 options={{
                      headerShown:false
                 }}
@@ -45,7 +75,7 @@ const Form_absensi_Kry = () => {
     )
 }
 
-export default Form_absensi_Kry
+export default MainForm
 
 const styles = StyleSheet.create({
     page:{ 

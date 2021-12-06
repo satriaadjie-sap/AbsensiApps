@@ -1,19 +1,21 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { ScrollView, StyleSheet, Text, View } from 'react-native'
 import { FormPengisian_3_1, HeaderFormAbsesni, ButtonBatal3, ButtonSelanjutnya3 } from '../../../components'
 import { WARNA_SEKUNDER } from '../../../utils/constants'
 
 const Form_absensi_3 = ({navigation}) => {
     return (
         <View>
-            <View style={styles.containerForm}>
-                <HeaderFormAbsesni text={"Langkah 3 / 5 : Mengisi Data OJT/Magang"}/>            
-                <FormPengisian_3_1/>                
-            </View>
-            <View style={styles.button}>
-                <ButtonBatal3/>
-                <ButtonSelanjutnya3 navigation = {navigation}/>
-            </View>
+            <ScrollView style={styles.containerScrollView}>
+                <View style={styles.containerForm}>
+                    <HeaderFormAbsesni text={"Langkah 3 / 5 : Mengisi Data OJT/Magang"}/>            
+                    <FormPengisian_3_1/>                
+                </View>
+                <View style={styles.button}>
+                    <ButtonBatal3 navigation={navigation}/>
+                    <ButtonSelanjutnya3 navigation = {navigation}/>
+                </View>
+            </ScrollView>
         </View>
     )
 }
