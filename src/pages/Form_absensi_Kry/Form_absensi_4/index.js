@@ -1,19 +1,21 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import { FormPengisian_4_1, HeaderFormAbsesni, ButtonBatal4, ButtonSelanjutnya2 } from '../../../components'
+import { ScrollView, StyleSheet, Text, View } from 'react-native'
+import { FormPengisian_4_1, HeaderFormAbsesni, ButtonBatal4, ButtonSelanjutnya4Kry } from '../../../components'
 import { WARNA_SEKUNDER } from '../../../utils/constants'
 
-const Form_absensi_4 = () => {
+const Form_absensi_4 = ({navigation}) => {
     return (
         <View>
-            <View style={styles.containerForm}>
-                <HeaderFormAbsesni text={"Langkah 4 / 5 : Mengisi Formulir Deklarasi Kesehatan"}/>            
-                <FormPengisian_4_1/>                
-            </View>
-            <View style={styles.button}>
-                {/* <ButtonBatal4/> */}
-                <ButtonSelanjutnya2/>
-            </View>
+            <ScrollView style={styles.containerScrollView}>
+                <View style={styles.containerForm}>
+                    <HeaderFormAbsesni text={"Langkah 4 / 5 : Mengisi Formulir Deklarasi Kesehatan"}/>            
+                    <FormPengisian_4_1/>                
+                </View>
+                <View style={styles.button}>
+                    {/* <ButtonBatal4/> */}
+                    <ButtonSelanjutnya4Kry navigation={navigation}/>
+                </View>
+            </ScrollView>
         </View>
     )
 }

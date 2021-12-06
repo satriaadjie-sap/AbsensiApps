@@ -100,25 +100,6 @@ class FormPengisian_1_1 extends React.Component {
         return (
             <View style={styles.container}>
     
-                {/* Pilihan Anda */}
-                <View style={styles.containerQuestion}>
-                    <Text style={styles.textHeader}>
-                    Jenis Kelamin
-                        <Text style={styles.Mandatory}> *</Text>
-                    </Text>
-                    <View style={styles.comboBox}>
-                        <Picker
-                            selectedValue={this.state.selectedValue}
-                            mode="dropdown"
-                            backgroundColor={WARNA_PUTIH}
-                            fontSize="13"                            
-                        >
-                            <Picker.Item label="-- Pilih --" value="-" />
-                            <Picker.Item label="Perempuan" value="0" />
-                            <Picker.Item label="Laki-laki" value="1" />
-                        </Picker>
-                    </View>
-                </View>
                 {/* Informasi pengisian */}
                 <View style={styles.containerQuestion}>
                     <Text style={styles.textHeader}>

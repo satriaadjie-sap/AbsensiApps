@@ -5,7 +5,7 @@ import axios, { Axios } from 'axios'
 import { Alert, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { WARNA_BIRU, WARNA_BIRU_MUDA, WARNA_HITAM, WARNA_PUTIH, LINK_API } from '../../../utils/constants'
 
-const ButtonSelanjutnya1Kry = () => {
+const ButtonSelanjutnya1Kry = (props) => {
     const [step, setStep] = useState('Step 1')
     const [npk, setNpk] = useState('123523')
     const [hamil, setHamil] = useState('tidak')
@@ -32,6 +32,10 @@ const ButtonSelanjutnya1Kry = () => {
     const [namaVaksin, setNamaVaksin] = useState('tes')
     const [sertifVaksin, setSertifVaksin] = useState('tes')
 
+    const PindahForm = () => {
+        props.navigation.navigate('Form_absensi_4')
+    }
+
     const handleSubmitPress = () => {
         axios
             .post(`${LINK_API}Absensi/CreateKarAbsensi?step=${step}&npk=${npk}&fab_is_hamil=${hamil}
@@ -55,9 +59,10 @@ const ButtonSelanjutnya1Kry = () => {
                     // console.log(data);
                     // navigation.replace('Absensi4');
                     // navigation.navigate('Absensi4');
+                    props.navigation.navigate('Form_absensi_4')
 
                     //notif kalo berhasil diubah
-                    alert('Berhasil tambah data ' + for_id);
+                    // alert('Berhasil tambah data ' + for_id);
                     return;
                 }
                 else
@@ -75,6 +80,7 @@ const ButtonSelanjutnya1Kry = () => {
     return (        
         <View  style={styles.button}>
             <TouchableOpacity
+                // onPress={PindahForm}
                 onPress={handleSubmitPress}
                 // onPress={() => Alert.alert("Selanjutnya")}
             >

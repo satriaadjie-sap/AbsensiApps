@@ -4,6 +4,7 @@ import HeaderApps from './HeaderApps'
 import InformasiPengisian from './InformasiPengisian'
 import NotifPengisian from './NotifPengisian'
 import ButtonIsiFormulir from './ButtonIsiFormulir'
+import ButtonIsiFormulirKry from './ButtonIsiFormulirKry'
 import TablePengisian from './TablePengisian'
 import TablePengisianMahasiswa from './TablePengisianMahasiswa'
 import TablePengumuman from './TablePengumuman'
@@ -62,7 +63,7 @@ import {ButtonKembali, Form_1, Form_2, Form_3, Form_4,
 import {TablePengumumanKry, TablePengumumanMhs, TablePengumumanSatgas} from './TablePengumuman'
 
 export {TablePengisian, TablePengisianMahasiswa, BottomTabNavigator, HeaderInformation, HeaderApps,
-    InformasiPengisian, NotifPengisian, ButtonIsiFormulir, CellAksiFormulir, HeaderFormAbsesni,
+    InformasiPengisian, NotifPengisian, ButtonIsiFormulir, ButtonIsiFormulirKry, CellAksiFormulir, HeaderFormAbsesni,
     TablePengumuman, TablePengumumanMhs, TablePengumumanKry, TablePengumumanSatgas, CellAksiPengumuman, FormUbahSandi, ButtonSimpanSandi,
     InformasiDataDiri, InformasiTinggalBersama,
     FormPengisian_1_1, FormPengisian_1_2, ButtonSalin, FormPengisian_1_3, FormPengisian_1_4, FormPengisian_1_5,

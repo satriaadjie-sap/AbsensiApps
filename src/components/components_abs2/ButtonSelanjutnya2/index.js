@@ -3,17 +3,30 @@ import axios, { Axios } from 'axios'
 import { Alert, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { WARNA_BIRU, WARNA_BIRU_MUDA, WARNA_HITAM, WARNA_PUTIH, LINK_API  } from '../../../utils/constants'
 
-const ButtonSelanjutnya2 = () => {
-    
-    // var pertanyaan = [];
-    // var jawaban = [];
-    const [pertanyaan, setPertanyaan] = useState('2')
-    const [jawaban, setJawaban] = useState('Kode')
-    const [npk, setNpk] = useState('12353345')
+const ButtonSelanjutnya2 = (props) => {
+
+    const [nim, setNim] = useState('0320190003')
     const [idForm, setIdForm] = useState('2')
-    const [total, setTotal] = useState('1')
-    const [resiko, setResiko] = useState('Hijau')
+
+    const [kesehatan, setKesehatan] = useState('tes')
+    const [kesehatanDesc, setKesehatanDesc] = useState('tes')
+    const [kesehatanFam, setKesehatanFam] = useState('tes')
+    const [kesehatanFamDesc, setKesehatanFamDesc] = useState('tes')
+    const [covid, setCovid] = useState('tes')
+    const [covidDesc, setCovidDesc] = useState('tes')
+    const [covidArr, setCovidArr] = useState('tes')
+
+    const [covidArrDesc, setCovidArrDesc] = useState('tes')
+    const [riwayat, setRiwayat] = useState('-')
+    const [sudahVaksin, setSudahVaksin] = useState('tes')
+    const [jumlahVaksin, setJumlahVaksin] = useState('tes')
+    const [namaVaksin, setNamaVaksin] = useState('tes')
+    const [sertifVaksin, setSertifVaksin] = useState('tes')
     
+    const PindahForm = () => {
+        props.navigation.navigate('Form_absensi_3')
+    }
+
     const handleSubmitPress = () => {
         // for(let i = 0; i < 8; i++){
         //     axios
@@ -39,16 +52,16 @@ const ButtonSelanjutnya2 = () => {
         // }
 
         axios
-            .post(`${LINK_API}Absensi/CreateKarDeklarasiExt?npk=${npk}&idForm=${idForm}
-            &total=${total}&resiko=${resiko}`)
+            .post(`${LINK_API}Absensi/CreateAbsensi2?nim=${nim}&idForm=${idForm}&kesehatan=${kesehatan}
+            &kesehatanDesc=${kesehatanDesc}&kesehatanFam=${kesehatanFam}&kesehatanFamDesc=${kesehatanFamDesc}
+            &covid=${covid}&covidDesc=${covidDesc}&covidArr=${covidArr}&covidArrDesc=${covidArrDesc}
+            &riwayat=${riwayat}&sudahVaksin=${sudahVaksin}&jumlahVaksin=${jumlahVaksin}
+            &namaVaksin=${namaVaksin}&sertifVaksin=${sertifVaksin}`)
             .then((res) => {
                 if(res.data.result === "SUCCESS") {
 
-                    let for_id = res.data.for_id;
-                    let bom_total = res.data.bom_total;
-                    let bom_resiko = res.data.bom_resiko;
-
-                    alert('Berhasil tambah data ' + for_id + " " + bom_total);
+                    props.navigation.navigate('Form_absensi_3')
+                    // alert('Berhasil tambah data ' + for_id + " " + bom_total);
                     return;
                 }
                 else
@@ -66,6 +79,7 @@ const ButtonSelanjutnya2 = () => {
     return (        
         <View  style={styles.button}>
             <TouchableOpacity
+                // onPress={PindahForm}
                 onPress={handleSubmitPress}
                 // onPress={() => Alert.alert("Selanjutnya")}
             >

@@ -9,52 +9,22 @@ import { WARNA_BIRU, WARNA_BIRU_MUDA, WARNA_HITAM, WARNA_PUTIH, LINK_API } from 
 //     Form_absensi_4, Form_absensi_5, Form_absensi_detail } from './Form_routing'
 
 const ButtonSelanjutnya3 = (props) => {
-
-    const nav = useNavigation();
-
-    const [step, setStep] = useState('Step 1')
+    
     const [nim, setNim] = useState('0320190003')
-    const [tinggal, setTinggal] = useState('Jakarta')
-    const [posisi, setPosisi] = useState('Bandung')
-    const [astra, setAstra] = useState('y')
-    const [astraDesc, setAstraDesc] = useState('tes')
-    const [noHP, setNohp] = useState('0821764723')
-    const [profesi, setProfesi] = useState('tes')
-    const [luarNegri, setLuarNegri] = useState('tes')
-    const [luarNegriDesc, setLuarNegriDesc] = useState('tes')
+    const [idForm, setIdForm] = useState('2')
 
-    const [kesehatan, setKesehatan] = useState('tes')
-    const [kesehatanDesc, setKesehatanDesc] = useState('tes')
-    const [kesehatanFam, setKesehatanFam] = useState('tes')
-    const [kesehatanFamDesc, setKesehatanFamDesc] = useState('tes')
-    const [covid, setCovid] = useState('tes')
-    const [covidDesc, setCovidDesc] = useState('tes')
-    const [covidArr, setCovidArr] = useState('tes')
-    const [covidArrDesc, setCovidArrDesc] = useState('tes')
-    const [riwayat, setRiwayat] = useState('-')
     const [ojt, setOjt] = useState('tes')
-
     const [ojtAlamat, setOjtAlamat] = useState('tes')
     const [ojtDesc, setOjtDesc] = useState('tes')
-    const [kendaraan, setKendaraan] = useState('tes')
-    const [kendaraanDesc, setKendaraanDesc] = useState('tes')
-    const [rs, setRS] = useState('tes')
-    const [rsDesc, setRSDesc] = useState('tes')
-    const [sudahVaksin, setSudahVaksin] = useState('tes')
-    const [jumlahVaksin, setJumlahVaksin] = useState('tes')
-    const [namaVaksin, setNamaVaksin] = useState('tes')
-    const [sertifVaksin, setSertifVaksin] = useState('tes')
 
-    const handleSubmitPress = (props) => {
+    const PindahForm = () => {
+        props.navigation.navigate('Form_absensi_4')
+    }
+
+    const handleSubmitPress = () => {
         axios
-            .post(`${LINK_API}Absensi/CreateAbsensi?step=${step}&nim=${nim}&tempatTinggal=${tinggal}
-            &posisi=${posisi}&astra=${astra}&astraDesc=${astraDesc}&noHp=${noHP}&profesi=${profesi}
-            &luarNegri=${luarNegri}&luarNegriDesc=${luarNegriDesc}&kesehatan=${kesehatan}
-            &kesehatanDesc=${kesehatanDesc}&kesehatanFam=${kesehatanFam}&kesehatanFamDesc=${kesehatanFamDesc}
-            &covid=${covid}&covidDesc=${covidDesc}&covidArr=${covidArr}&covidArrDesc=${covidArrDesc}
-            &riwayat=${riwayat}&ojt=${ojt}&ojtAlamat=${ojtAlamat}&ojtDesc=${ojtDesc}&kendaraan=${kendaraan}
-            &kendaraanDesc=${kendaraanDesc}&RS=${rs}&RSDesc=${rsDesc}&sudahVaksin=${sudahVaksin}
-            &jumlahVaksin=${jumlahVaksin}&namaVaksin=${namaVaksin}&sertifVaksin=${sertifVaksin}`)
+            .post(`${LINK_API}Absensi/CreateAbsensi3?nim=${nim}&idForm=${idForm}
+            &ojt=${ojt}&ojtAlamat=${ojtAlamat}&ojtDesc=${ojtDesc}`)
             .then((res) => {
                 if(res.data.result === "SUCCESS") {
                     // let step = res.data.step;
@@ -65,12 +35,12 @@ const ButtonSelanjutnya3 = (props) => {
                     //     nim: nim
                     // }
                     // console.log(data);
-                    props.navigation.navigate('/src/pages/Form_absensi/Form_absensi_4')
+                    props.navigation.navigate('Form_absensi_4')
                     // navigation.replace('MainAppKry');
                     // nav.navigate('Form_absensi_4');
 
                     //notif kalo berhasil diubah
-                    alert('Berhasil tambah data ' + fma_id);
+                    // alert('Berhasil tambah data ' + fma_id);
                     return;
                 }
                 else
@@ -88,6 +58,7 @@ const ButtonSelanjutnya3 = (props) => {
     return (
         <View  style={styles.button}>
             <TouchableOpacity
+                // onPress={PindahForm}
                 onPress={handleSubmitPress}
                 // onPress={() => props.navigation.navigate("Form Absensi")}
                 // onPress={() => navigation.replace('Absensi4')}

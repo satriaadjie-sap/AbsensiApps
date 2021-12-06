@@ -5,48 +5,35 @@ import axios, { Axios } from 'axios'
 import { Alert, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { WARNA_BIRU, WARNA_BIRU_MUDA, WARNA_HITAM, WARNA_PUTIH, LINK_API } from '../../../utils/constants'
 
-const ButtonSelanjutnya1 = () => {
+const ButtonSelanjutnya1 = (props) => {
+
     const [step, setStep] = useState('Step 1')
-    const [npk, setNpk] = useState('123523')
-    const [hamil, setHamil] = useState('tidak')
+    const [nim, setNim] = useState('0320190003')
     const [tinggal, setTinggal] = useState('Jakarta')
     const [posisi, setPosisi] = useState('Bandung')
-
-    const [kesehatan, setKesehatan] = useState('tes')
-    const [kesehatanDesc, setKesehatanDesc] = useState('tes')
-    const [kesehatanFam, setKesehatanFam] = useState('tes')
-    const [kesehatanFamDesc, setKesehatanFamDesc] = useState('tes')
-    const [covid, setCovid] = useState('tes')
-    const [covidDesc, setCovidDesc] = useState('tes')
-    const [covidArr, setCovidArr] = useState('tes')
-    const [covidArrDesc, setCovidArrDesc] = useState('tes')
-    const [riwayat, setRiwayat] = useState('-')
-
+    const [astra, setAstra] = useState('y')
+    const [astraDesc, setAstraDesc] = useState('tes')
+    const [noHP, setNohp] = useState('0821764723')
+    const [profesi, setProfesi] = useState('tes')
     const [kendaraan, setKendaraan] = useState('tes')
+    const [kendaraanDesc, setKendaraanDesc] = useState('tes')
     const [rs, setRS] = useState('tes')
     const [rsDesc, setRSDesc] = useState('tes')
-    const [banjirArr, setBanjirArr] = useState('y')
-    const [banjirRumah, setBanjirRumah] = useState('y')
-    const [sudahVaksin, setSudahVaksin] = useState('tes')
-    const [jumlahVaksin, setJumlahVaksin] = useState('tes')
-    const [namaVaksin, setNamaVaksin] = useState('tes')
-    const [sertifVaksin, setSertifVaksin] = useState('tes')
+
+    // const PindahForm = () => {
+    //     props.navigation.navigate('Form_absensi_2')
+    // }
 
     const handleSubmitPress = () => {
         axios
-            .post(`${LINK_API}Absensi/CreateKarAbsensi?step=${step}&npk=${npk}&fab_is_hamil=${hamil}
-            &tempatTinggal=${tinggal}
-            &lokasi=${posisi}&kesehatan=${kesehatan}&kesehatanDesc=${kesehatanDesc}
-            &kesehatanFam=${kesehatanFam}&kesehatanFamDesc=${kesehatanFamDesc}&covid=${covid}
-            &covidDesc=${covidDesc}&covidArr=${covidArr}&covidArrDesc=${covidArrDesc}&riwayat=${riwayat}
-            &kendaraan=${kendaraan}&RS=${rs}&RSDesc=${rsDesc}&banjirArr=${banjirArr}&banjirRumah=${banjirRumah}
-            &sudahVaksin=${sudahVaksin}&jumlahVaksin=${jumlahVaksin}&namaVaksin=${namaVaksin}
-            &sertifVaksin=${sertifVaksin}`)
+            .post(`${LINK_API}Absensi/CreateAbsensi?nim=${nim}&tempatTinggal=${tinggal}
+            &posisi=${posisi}&astra=${astra}&astraDesc=${astraDesc}&noHp=${noHP}&profesi=${profesi}
+            &kendaraan=${kendaraan}&kendaraanDesc=${kendaraanDesc}&RS=${rs}&RSDesc=${rsDesc}`)
             .then((res) => {
                 
                 if(res.data.result === "SUCCESS") {
                     // let step = res.data.step;
-                    let for_id = res.data.for_id;
+                    let fma_id = res.data.fma_id;
                 
                     // let data = {
                     //     step: step,
@@ -55,9 +42,12 @@ const ButtonSelanjutnya1 = () => {
                     // console.log(data);
                     // navigation.replace('Absensi4');
                     // navigation.navigate('Absensi4');
+                    props.navigation.navigate('Form_absensi_2', {
+                        paramKey: fma_id,
+                      })
 
                     //notif kalo berhasil diubah
-                    alert('Berhasil tambah data ' + for_id);
+                    // alert('Berhasil tambah data ' + fma_id);
                     return;
                 }
                 else
@@ -72,7 +62,7 @@ const ButtonSelanjutnya1 = () => {
             .finally(() => setLoading(false));
             };
             
-    return (        
+    return (
         <View  style={styles.button}>
             <TouchableOpacity
                 onPress={handleSubmitPress}

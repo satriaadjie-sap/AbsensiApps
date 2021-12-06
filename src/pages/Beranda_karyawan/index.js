@@ -1,6 +1,6 @@
 import React, { Component, useState, createRef, useEffect } from 'react'
 import { SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View, AsyncStorage } from 'react-native'
-import { ButtonIsiFormulir, HeaderApps, HeaderInformation, InformasiPengisian, NotifPengisian } from '../../components'
+import { ButtonIsiFormulirKry, HeaderApps, HeaderInformation, InformasiPengisian, NotifPengisian } from '../../components'
 import { WARNA_BG_FORM, WARNA_MERAH, WARNA_PUTIH, WARNA_SEKUNDER } from '../../utils/constants'
 
 let rolget = '';
@@ -22,7 +22,7 @@ const Beranda_karyawan = ({hasAbsen=false, navigation}) => {
                     <InformasiPengisian /> 
                     {/* NOTIFIKASI PENGISIAN AKAN AKTIF JIKA SUDAH MENGISI FORMULIR*/}
                     {/* BUTTON ISI FORMULIR AKAN AKTTIF JIKA BELUM MENGISI FORMULIR */}
-                    {hasAbsen == true ? <NotifPengisian data={data}/>  : <ButtonIsiFormulir navigation = {navigation}/>}
+                    {hasAbsen == true ? <NotifPengisian data={data}/>  : <ButtonIsiFormulirKry navigation = {navigation}/>}
                     
                     <Text style={styles.textKesulitan}>
                         Jika terdapat kesulitan tentang cara penggunaan aplikasi ini, silahkan menghubungi MIS / Bang Candra.
