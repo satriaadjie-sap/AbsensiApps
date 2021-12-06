@@ -59,9 +59,10 @@ const ButtonSelanjutnya1Kry = (props) => {
                     // console.log(data);
                     // navigation.replace('Absensi4');
                     // navigation.navigate('Absensi4');
+                    props.navigation.navigate('Form_absensi_4')
 
                     //notif kalo berhasil diubah
-                    alert('Berhasil tambah data ' + for_id);
+                    // alert('Berhasil tambah data ' + for_id);
                     return;
                 }
                 else
@@ -79,8 +80,8 @@ const ButtonSelanjutnya1Kry = (props) => {
     return (        
         <View  style={styles.button}>
             <TouchableOpacity
-                onPress={PindahForm}
-                // onPress={handleSubmitPress}
+                // onPress={PindahForm}
+                onPress={handleSubmitPress}
                 // onPress={() => Alert.alert("Selanjutnya")}
             >
                 <Text style={styles.textButton}>SELANJUTNYA</Text>

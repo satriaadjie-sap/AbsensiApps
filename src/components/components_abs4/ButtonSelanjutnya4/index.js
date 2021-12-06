@@ -52,7 +52,9 @@ const ButtonSelanjutnya4 = (props) => {
                     let bom_total = res.data.bom_total;
                     let bom_resiko = res.data.bom_resiko;
 
-                    alert('Berhasil tambah data ' + fma_id + " " + bom_total);
+                    props.navigation.navigate('Form_absensi_5')
+
+                    // alert('Berhasil tambah data ' + fma_id + " " + bom_total);
                     return;
                 }
                 else
@@ -71,8 +73,8 @@ const ButtonSelanjutnya4 = (props) => {
     return (        
         <View  style={styles.button}>
             <TouchableOpacity
-                onPress={PindahForm}
-                // onPress={handleSubmitPress}
+                // onPress={PindahForm}
+                onPress={handleSubmitPress}
                 // onPress={() => Alert.alert("Selanjutnya")}
             >
                 <Text style={styles.textButton}>SELANJUTNYA</Text>
