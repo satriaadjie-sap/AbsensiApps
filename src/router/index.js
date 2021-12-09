@@ -16,8 +16,8 @@ const MainApp = () => {
     return (
         <Tab.Navigator tabBar={props => <BottomTabNavigator {...props} />}>
             <Tab.Screen name="Beranda" component={Beranda} />
-            <Tab.Screen name="Form Absensi" component={Riwayat_absensi_mahasiswa} />
-            {/* <Tab.Screen name="Form Absensi" component={Form_absensi} /> */}
+            {/* <Tab.Screen name="Form Absensi" component={Riwayat_absensi_mahasiswa} /> */}
+            <Tab.Screen name="Form Absensi" component={Form_absensi} />
             <Tab.Screen name="Pengumuman" component={Riwayat_pengumuman} />
             <Tab.Screen name="Ubah Sandi" component={Ubah_sandi} />
             {/* <Tab.Screen name="LogOut" component={Logout} /> */}
@@ -30,8 +30,8 @@ const MainAppKry = () => {
     return (
         <Tab.Navigator tabBar={props => <BottomTabNavigator {...props} />}>
             <Tab.Screen name="Beranda" component={Beranda_karyawan} />
-            <Tab.Screen name="Form Absensi" component={Riwayat_absensi} />
-            {/* <Tab.Screen name="Form Absensi" component={Form_absensi_Kry} /> */}
+            {/* <Tab.Screen name="Form Absensi" component={Riwayat_absensi} /> */}
+            <Tab.Screen name="Form Absensi" component={Form_absensi_Kry} />
             <Tab.Screen name="Pengumuman" component={Riwayat_pengumuman_karyawan} />
             <Tab.Screen name="Ubah Sandi" component={Ubah_sandi} />
         </Tab.Navigator>        
@@ -42,7 +42,7 @@ const MainAppSatgas = () => {
     return (
         <Tab.Navigator tabBar={props => <BottomTabNavigator {...props} />}>
             <Tab.Screen name="Beranda" component={Beranda_satgas} />
-            {/* <Tab.Screen name="Laporan Satgas" component={Laporan_satgas} /> */}
+            <Tab.Screen name="Laporan" component={Laporan_satgas} />
             <Tab.Screen name="Pengumuman" component={Riwayat_pengumuman_satgas} />
         </Tab.Navigator>
     )

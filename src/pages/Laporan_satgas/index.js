@@ -117,8 +117,8 @@ const Laporan_satgas = ({hasAbsen=false, navigation}) => {
             <ScrollView  style={styles.containerScroll}>
                 <View style={styles.container}>
                     <Text style={styles.textUtama}>
-                        Selamat Datang!{"\n\n"}
-                        Ini merupakan halaman beranda untuk Satgas.{"\n\n"}
+                        
+                        Ini halaman laporan untuk Satgas.{"\n\n"}
                         
                     </Text>
                 </View>                 

@@ -16,18 +16,16 @@ export default class Riwayat_pengumuman_detail_sat extends Component{
     GetDetailPengumumanSat = async () => {
         try{
             const pen_id = await AsyncStorage.getItem('pen_id');
-            fetch('http://10.0.2.2:8080/get-pengumuman?id='+pen_id)
-            .then(response => response.json())
-            .then(json => {
-                console.log(json)
-                this.setState({
-                    data:json
-                })
-            })
+                axios
+                .get(`${LINK_API}Pengumuman/detailPengumuman?id=${pen_id}`)
+                .then( res => {
+                        this.setState({
+                        data:res.data
+                        })
+                    })
         }catch(error){
             console.log(error);
         }
-        
     }
     componentDidMount(){
       this.GetDetailPengumumanSat();

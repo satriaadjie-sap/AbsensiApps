@@ -7,6 +7,8 @@ import { DataTable } from 'react-native-paper';
 import { CellAksiPengumuman } from '../..';
 import { WARNA_HITAM, WARNA_PUTIH, WARNA_SEKUNDER, WARNA_UTAMA, LINK_API  } from '../../../utils/constants';
 import CellAksiPengumumanSatgas from '../../CellAksiPengumuman/CellAksiPengumumanSatgas';
+import CellAksiUbahPengumumanSatgas from '../../CellAksiPengumuman/CellAksiUbahPengumumanSatgas'
+import CellAksiTampilPengumumanSatgas from '../../CellAksiPengumuman/CellAksiTampilPengumumanSatgas'
 
 let usern = '';
 let rolen = '';
@@ -85,8 +87,15 @@ export default class TablePengumumanSatgas extends Component {
                 <DataTable.Cell  style={{flex: 1.5}}>
                   <Text style={styles.textData}>{myValue.pen_created_date}</Text></DataTable.Cell>
                 
-                <DataTable.Cell  style={{flex: 0.5}}>
+                <DataTable.Cell  style={{flex: 0.2}}>
                   <CellAksiPengumumanSatgas navigation={props.navigation} pen_id={myValue.pen_id}/></DataTable.Cell>
+            
+                <DataTable.Cell  style={{flex: 0.2}}>
+                  <CellAksiUbahPengumumanSatgas navigation={props.navigation} pen_id={myValue.pen_id}/></DataTable.Cell>
+
+                <DataTable.Cell  style={{flex: 0.2}}>
+                  <CellAksiTampilPengumumanSatgas navigation={props.navigation} pen_id={myValue.pen_id}/></DataTable.Cell>
+
             </DataTable.Row>
           )
       });

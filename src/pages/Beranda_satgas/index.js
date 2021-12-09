@@ -31,7 +31,7 @@ const Beranda_satgas = ({hasAbsen=false, navigation}) => {
 
     return (
         <View style={ styles.page }>
-            <View style={styles.container}>
+            {/* <View style={styles.container}> */}
                 <View style={styles.buttonContainer}>
                     <TouchableOpacity style={styles.button} onPress={() => navigation.replace("MainAppKry")}>
                         <Text style={styles.text}>Login sebagai Karyawan</Text>
@@ -64,7 +64,7 @@ const Beranda_satgas = ({hasAbsen=false, navigation}) => {
                             </TouchableOpacity>            
                         </View>
                     </View> */}
-            </View>
+            {/* </View> */}
         </View>
     );
 }

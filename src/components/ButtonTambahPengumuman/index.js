@@ -1,12 +1,12 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import React from 'react'
 import { StyleSheet, Text, View, TouchableOpacity, Alert } from 'react-native'
-import { WARNA_PUTIH, WARNA_HIJAU_MUDA } from '../../assets/icons'
+import { WARNA_PUTIH, WARNA_HIJAU_MUDA } from '../../utils/constants'
 
 const ButtonTambahPengumuman = (props) => {
     const detailHandle = () => {
         //AsyncStorage.setItem('pen_id',props.pen_id+"")
-        props.navigation.navigate('Form_create_pengumuman');
+        props.navigation.navigate('Form_create_pengumuman'); 
     }
     return (
         <View style={styles.outbutton}>
